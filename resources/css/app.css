@@ -4,6 +4,57 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@theme{
+    --color-main-red: #CF4345;
+    --color-white: #FFF;
+    --color-text-white:#FAFAFA;
+    --color-text-black:#2F2F2F;
+    --color-blue:#42A3C7;
+    --color-green:#15800F;
+    --color-text-light:#737373;
+    --color-grey:#E8E8E8;
+}
+
+.btn-main{
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-color: var(--color-main-red);
+    padding:0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    color: var(--color-text-white);
+    border: 1px solid var(--color-main-red);
+    transition: 0.2s;
+    display: block;
+}
+.btn-main:hover{
+    background-color: var(--color-white);
+    color: var(--color-main-red);
+    border: 1px solid var(--color-main-red);
+}
+
+.btn-sec{
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-color: var(--color-white);
+    padding:0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    color: var(--color-main-red);
+    border: 1px solid var(--color-main-red);
+    transition: 0.2s;
+    display: block;
+}
+.btn-sec:hover{
+    background-color: var(--color-main-red);
+    color: var(--color-text-white);
+}
+.btn-search{
+    font-size: 0.875rem;
+    border: 1px solid var(--color-grey);
+    padding:0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    display: inline-block;
 }
