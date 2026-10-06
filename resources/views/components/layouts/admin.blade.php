@@ -7,7 +7,7 @@
     <title>Document</title>
     @vite(['resources/css/app.css' , 'resources/js/app.js'])
 </head>
-<body>
+<body class="text-text-black">
 <div>
     <aside class="fixed top-0 left-0 z-40 w-64 h-full">
         <div class="flex flex-col justify-between h-full px-3 py-4 overflow-y-auto border border-zinc-200 ">
@@ -45,7 +45,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex items-center gap-4 bg-text-white rounded-lg p-4">
+            <div class="flex items-center gap-4 bg-light-white rounded-lg p-4">
                 <img class="mb-2 w-12 h-12 rounded-full" src="{{ asset('storage/cat1.jpg') }}" alt="">
                 <span class="font-medium text-sm">Madame Admina</span>
             </div>
