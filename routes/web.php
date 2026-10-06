@@ -19,3 +19,11 @@ Route::get('/epreuves/show', function () {
     return view('pages.admin.epreuves.show');
 })->name('epreuves.show');
 
+Route::get('/epreuves/students/index', function () {
+    return view('pages.admin.epreuves.students.index');
+})->name('students.index');
+
+Route::get('/epreuves/students/show', function () {
+    return view('pages.admin.epreuves.students.show');
+})->name('students.show');
+

@@ -5,7 +5,7 @@
     </div>
     <div>
         <table class="w-full table-auto">
-            <thead class="text-sm text-body bg-text-white border-b border-b-gray-100">
+            <thead class="text-sm text-body bg-light-white border-b border-b-gray-100">
             <tr>
                 <th scope="col" class="px-6 py-3">Profil</th>
                 <th scope="col" class="px-6 py-3 ">Nom</th>

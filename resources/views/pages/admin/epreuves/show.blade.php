@@ -1,6 +1,6 @@
 <x-layouts.admin>
     <div class="flex justify-between pb-20">
-        <h1 class="text-5xl ">Bienvenue sur l'épreuve x</h1>
+        <h1 class="text-4xl font-medium">Bienvenue sur l'épreuve x</h1>
         <button class="btn-main">Clôturée l'épreuve</button>
     </div>
     <section class="pb-20">
