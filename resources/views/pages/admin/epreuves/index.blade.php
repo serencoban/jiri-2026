@@ -5,7 +5,7 @@
     </div>
     <div>
         <div class="table w-full table-auto rounded-lg overflow-hidden">
-            <div class="table-header-group bg-light-white ">
+            <div class="table-header-group font-semibold bg-light-white ">
                     <div class="table-row">
                         <div class="table-cell px-6 py-4 text-center">Nom</div>
                         <div class="table-cell px-6 py-4 text-center">Date</div>
