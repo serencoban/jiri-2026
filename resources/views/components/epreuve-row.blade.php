@@ -1,22 +1,21 @@
-
-    <div class="table-row border-b border-b-gray-200 hover:bg-gray-50 cursor-pointer" x-data  @click="window.location.href='{{ route('epreuves.show') }}'">
-        <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">Epreuve 27</div>
-        <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100 ">11/06/2027</div>
-        <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">8h30</div>
-        <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">16h30</div>
-        <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
-            <select class="border p-2 rounded-lg" name="statuts" id="status">
-                <option value="ongoing">En cours</option>
-                <option value="upcoming">À venir</option>
-                <option value="completed">Terminée</option>
-            </select>
-        </div>
-        <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
-            <button class="cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="5" viewBox="0 0 20 5" fill="none">
-                    <path d="M2.25 4.5C1.00736 4.5 0 3.49264 0 2.25C0 1.00736 1.00736 0 2.25 0C3.49264 0 4.5 1.00736 4.5 2.25C4.5 3.49264 3.49264 4.5 2.25 4.5ZM9.75 4.5C8.50736 4.5 7.5 3.49264 7.5 2.25C7.5 1.00736 8.50736 0 9.75 0C10.9926 0 12 1.00736 12 2.25C12 3.49264 10.9926 4.5 9.75 4.5ZM17.25 4.5C16.0074 4.5 15 3.49264 15 2.25C15 1.00736 16.0074 0 17.25 0C18.4926 0 19.5 1.00736 19.5 2.25C19.5 3.49264 18.4926 4.5 17.25 4.5Z" fill="#2F2F2F"/>
-                </svg>
-            </button>
-        </div>
+<div class="table-row border-b border-b-gray-200 hover:bg-gray-50 cursor-pointer" x-data  @click="window.location.href='{{ route('epreuves.show') }}'">
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">Epreuve 27</div>
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100 ">11/06/2027</div>
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">8h30</div>
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">16h30</div>
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
+        <select class="border p-2 rounded-lg" name="statuts" id="status">
+            <option value="ongoing">En cours</option>
+            <option value="upcoming">À venir</option>
+            <option value="completed">Terminée</option>
+        </select>
     </div>
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
+        <button class="cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="5" viewBox="0 0 20 5" fill="none">
+                <path d="M2.25 4.5C1.00736 4.5 0 3.49264 0 2.25C0 1.00736 1.00736 0 2.25 0C3.49264 0 4.5 1.00736 4.5 2.25C4.5 3.49264 3.49264 4.5 2.25 4.5ZM9.75 4.5C8.50736 4.5 7.5 3.49264 7.5 2.25C7.5 1.00736 8.50736 0 9.75 0C10.9926 0 12 1.00736 12 2.25C12 3.49264 10.9926 4.5 9.75 4.5ZM17.25 4.5C16.0074 4.5 15 3.49264 15 2.25C15 1.00736 16.0074 0 17.25 0C18.4926 0 19.5 1.00736 19.5 2.25C19.5 3.49264 18.4926 4.5 17.25 4.5Z" fill="#2F2F2F"/>
+            </svg>
+        </button>
+    </div>
+</div>
 
