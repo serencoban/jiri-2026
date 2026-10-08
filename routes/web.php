@@ -27,3 +27,6 @@ Route::get('/epreuves/students/show', function () {
     return view('pages.admin.epreuves.students.show');
 })->name('students.show');
 
+Route::get('/evaluators', function () {
+    return view('pages.evaluators.epreuves.index');
+})->name('evaluators');
