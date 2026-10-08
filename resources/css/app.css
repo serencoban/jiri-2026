@@ -24,6 +24,7 @@
 }
 
 .btn-main{
+    box-shadow: 0 1px rgb(0 0 0 / 0.05);
     font-size: 0.875rem;
     font-weight: 600;
     background-color: var(--color-main-red);
@@ -41,6 +42,7 @@
 }
 
 .btn-sec{
+    box-shadow: 0 1px rgb(0 0 0 / 0.05);
     font-size: 0.875rem;
     font-weight: 600;
     background-color: var(--color-white);
@@ -56,6 +58,7 @@
     color: var(--color-light-white);
 }
 .btn-search{
+    box-shadow: 0 1px rgb(0 0 0 / 0.05);
     font-size: 0.875rem;
     border: 1px solid var(--color-grey);
     padding:0.75rem 1.25rem;

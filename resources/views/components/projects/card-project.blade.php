@@ -13,12 +13,13 @@
     <a href="#" class="btn-sec">Aller vers le cahier de charge</a>
     <div class="pt-4">
         <span class="block pb-2">Liste des tâches pour ce projet</span>
-        <ul class="bg-light-white rounded-lg p-4">
-            <li>faire ceci</li>
-            <li>faire ceci</li>
-            <li>faire ceci</li>
-            <li>faire ceci</li>
-            <li>faire ceci</li>
+        <ul class="bg-light-white rounded-lg p-4 list-disc">
+            <li class="marker:text-main-red">faire ceci</li>
+            <li class="marker:text-main-red">faire ceci</li>
+            <li class="marker:text-main-red">faire ceci</li>
+            <li class="marker:text-main-red">faire ceci</li>
+            <li class="marker:text-main-red">faire ceci</li>
+            <li class="marker:text-main-red">faire ceci</li>
         </ul>
     </div>
 </div>
