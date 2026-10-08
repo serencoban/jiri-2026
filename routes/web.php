@@ -30,3 +30,8 @@ Route::get('/epreuves/students/show', function () {
 Route::get('/evaluators', function () {
     return view('pages.evaluators.epreuves.index');
 })->name('evaluators');
+
+Route::get('/evaluators/show', function () {
+    return view('pages.evaluators.epreuves.show');
+})->name('evaluators.show');
+

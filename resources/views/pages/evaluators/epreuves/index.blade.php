@@ -11,7 +11,7 @@
         </div>
         <div class="grid grid-cols-4 gap-8">
             @for($i = 0; $i < 10; $i++)
-                <x-students.student-card/>
+                <x-evaluators.student-card status="submitted" />
             @endfor
         </div>
     </section>
