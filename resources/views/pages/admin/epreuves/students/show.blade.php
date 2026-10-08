@@ -19,18 +19,18 @@
     <section class="pt-8">
         <h2 class="sro">Les projet de Seren</h2>
         <div x-data="{ selectedTab: 'portfolio' }" class="w-full">
-            <x-projects.projects-tab/>
+            <x-generic.projects.projects-tab/>
             <div class="border rounded-b-lg border-grey border-t-0 p-8">
                 <div  x-cloak x-show="selectedTab === 'portfolio'" role="tabpanel">
-                    <x-projects.projects-tabpannel title="Portfolio"/>
+                    <x-admin.projects.tabpannel title="Portfolio"/>
                 </div>
 
                 <div x-cloak x-show="selectedTab === 'reproduction'" role="tabpanel">
-                    <x-projects.projects-tabpannel title="Site reproduction"/>
+                    <x-admin.projects.tabpannel title="Site reproduction"/>
                 </div>
 
                 <div x-cloak x-show="selectedTab === 'vm'" role="tabpanel">
-                    <x-projects.projects-tabpannel title="Le Vieux Moulin"/>
+                    <x-admin.projects.tabpannel title="Le Vieux Moulin"/>
                 </div>
             </div>
         </div>

@@ -6,12 +6,12 @@
         <div class="flex justify-between">
             <h2 class="text-3xl font-medium">Liste des élèves</h2>
             <div class="flex pb-4">
-                <x-table.table-filter.search-input/>
+                <x-generic.table.table-filter.search-input/>
             </div>
         </div>
         <div class="grid grid-cols-4 gap-8">
             @for($i = 0; $i < 10; $i++)
-                <x-evaluators.student-card status="submitted" />
+                <x-evaluators.students.card status="submitted" />
             @endfor
         </div>
     </section>
@@ -19,12 +19,12 @@
         <div class="flex justify-between">
             <h2 class="text-3xl font-medium">Liste des projets</h2>
             <div class="flex pb-4">
-                <x-table.table-filter.search-input/>
+                <x-generic.table.table-filter.search-input/>
             </div>
         </div>
         <div class="grid grid-cols-3 gap-8">
             @for($i = 0; $i < 4; $i++)
-                <x-projects.card-project/>
+                <x-generic.projects.card-project/>
 
             @endfor
         </div>

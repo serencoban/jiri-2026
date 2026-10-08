@@ -56,7 +56,7 @@
         {{$slot}}
     </main>
 </div>
-<livewire:drawer />
+<livewire:generic.drawer/>
 @livewireScripts
 </body>
 </html>
