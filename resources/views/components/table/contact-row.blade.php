@@ -2,9 +2,9 @@
     <div class="table-cell px-6 py-4 border-b border-b-gray-100">
         <img class="w-10 h-10 rounded-full" src="{{ asset('storage/andrew.jpg') }}" alt="">
     </div>
-    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">Seren</div>
-    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">Coban</div>
-    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">serencoban@gmail.com</div>
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">Andrew</div>
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">Garfield</div>
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">andgar@gmail.com</div>
     <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
         <button class="cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="5" viewBox="0 0 20 5" fill="none">
