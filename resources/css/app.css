@@ -7,7 +7,11 @@
     --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
-
+@layer components{
+    .drawer{
+        @apply fixed top-0 right-0 bottom-0 w-[40vw] p-4 bg-neutral-100 shadow
+    }
+}
 @theme{
     --color-main-red: #CF4345;
     --color-white: #FFF;

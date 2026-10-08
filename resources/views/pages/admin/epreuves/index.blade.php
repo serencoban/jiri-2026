@@ -1,7 +1,7 @@
 <x-layouts.admin>
     <h1 class="text-4xl pb-8">Liste des épreuves</h1>
     <div class="flex justify-end pb-4">
-        <x-table-filter.search-filter-btn />
+        <x-table.table-filter.search-filter-btn />
     </div>
     <div>
         <div class="table w-full table-auto rounded-lg overflow-hidden">
@@ -18,7 +18,7 @@
 
             <div class="table-row-group">
                 @for ($i = 0; $i < 15; $i++)
-                    <x-epreuve-row />
+                    <x-table.epreuve-row />
                 @endfor
             </div>
         </div>

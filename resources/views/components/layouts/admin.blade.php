@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
+    @livewireStyles
     @vite(['resources/css/app.css' , 'resources/js/app.js'])
 </head>
 <body class="text-text-black">
@@ -55,5 +56,7 @@
         {{$slot}}
     </main>
 </div>
+<livewire:drawer />
+@livewireScripts
 </body>
 </html>

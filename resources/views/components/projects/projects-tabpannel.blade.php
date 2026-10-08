@@ -18,7 +18,7 @@
         <div>
             <div class="flex gap-4 items-center pb-4">
                 <span>L'évaluation d'Andrew Garfield</span>
-                <button @click="$dispatch('open-drawer')">
+                <button type="button" @click="$dispatch('open-drawer', {form: 'evaluators.list'})" class="cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
                         <path d="M8 0.5H26C30.1421 0.5 33.5 3.85786 33.5 8V26C33.5 30.1421 30.1421 33.5 26 33.5H8C3.85786 33.5 0.5 30.1421 0.5 26V8C0.5 3.85786 3.85786 0.5 8 0.5Z" fill="#FAFAFA" stroke="#CF4345"/>
                         <path d="M12.0024 20L21.5949 20L16.7987 25.4814L12.0024 20ZM11.2499 20.6585L16.0461 26.1399C16.4445 26.5952 17.1528 26.5952 17.5512 26.1399L22.3475 20.6585C22.9132 20.0119 22.4541 19 21.5949 19H12.0024C11.1433 19 10.6841 20.0119 11.2499 20.6585Z" fill="#CF4345"/>
