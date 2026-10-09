@@ -25,6 +25,9 @@
                             <span class="ms-3">Epreuve 27</span>
                         </a>
                     </li>
+                    <li class="mt-10">
+                        <a class="text-sm text-grey" href="{{route('epreuves')}}">POV Admin</a>
+                    </li>
                 </ul>
             </div>
         </div>

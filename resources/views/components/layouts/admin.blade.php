@@ -44,6 +44,9 @@
                             <span class="ms-3">Projets</span>
                         </a>
                     </li>
+                    <li class="mt-10">
+                        <a class="text-sm text-grey" href="{{route('evaluators')}}">POV Évaluateur</a>
+                    </li>
                 </ul>
             </div>
             <div class="flex items-center gap-4 bg-light-white rounded-lg p-4">

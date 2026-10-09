@@ -12,7 +12,7 @@
         </div>
     </div>
     <section class="pt-8">
-        <h2 class="sro">Les projet de Seren</h2>
+        <h2 class="sr-only">Les projet de Seren</h2>
         <div x-data="{ selectedTab: 'portfolio' }" class="w-full">
             <x-generic.projects.projects-tab/>
             <div class="border rounded-b-lg border-grey border-t-0 p-8">
