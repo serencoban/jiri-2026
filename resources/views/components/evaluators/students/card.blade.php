@@ -1,4 +1,7 @@
 @props([
+    'image',
+    'student',
+    'evaluators_seen'=>0,
     'status' => 'not_started',
 ])
 
@@ -22,8 +25,8 @@
             @endif
         </div>
 
-        <img class="mb-2 w-16 h-16 rounded-full" src="{{ asset('storage/cat1.jpg') }}" alt="Photo de l'élève">
-        <span class="text-xl font-medium">Coban Seren</span>
-        <span>6/10 évaluateurs</span>
+        <img class="mb-2 w-16 h-16 rounded-full" src="{{ asset('storage/' . $image) }}" alt="Photo de l'élève">
+        <span class="text-xl font-medium">{{$student}}</span>
+        <span>{{$evaluators_seen}}/10 évaluateurs </span>
     </div>
 </a>

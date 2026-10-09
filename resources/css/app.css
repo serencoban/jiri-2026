@@ -7,6 +7,7 @@
     --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
 @theme{
     --color-main-red: #CF4345;
     --color-white: #FFF;
@@ -35,7 +36,7 @@
         @apply bg-main-red text-white border border-main-red
     }
     .btn-search{
-        @apply shadow-2xs text-sm border border-grey py-3 px-5 inline-block
+        @apply shadow-2xs text-sm border border-grey py-3 px-5 inline-block w-full rounded-lg
     }
 }
 
