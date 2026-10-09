@@ -37,9 +37,9 @@
             </div>
         </div>
         <div class="grid grid-cols-3 gap-8">
-            @for($i = 0; $i < 4; $i++)
-                <x-generic.projects.card-project/>
-            @endfor
+            <x-generic.projects.card-project title="Portfolio" :show_weighting="true" weighting="33" />
+            <x-generic.projects.card-project title="Site reproduction" :show_weighting="true" weighting="33" />
+            <x-generic.projects.card-project title="Le Vieux Moulin" :show_weighting="true" weighting="33" />
         </div>
     </section>
 </x-layouts.admin>
