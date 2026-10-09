@@ -9,11 +9,7 @@
                 <x-generic.table.table-filter.search-input/>
             </div>
         </div>
-        <div class="grid grid-cols-4 gap-8">
-            @for($i = 0; $i < 10; $i++)
-                <x-evaluators.students.card status="submitted" />
-            @endfor
-        </div>
+        <x-evaluators.epreuves.cards/>
     </section>
     <section class="pb-20">
         <div class="flex justify-between">

@@ -1,10 +1,29 @@
-<div class="table-row border-b border-b-gray-200 hover:bg-gray-50">
+@props([
+    'firstname',
+    'lastname',
+    'email',
+    'image',
+])
+
+<div
+    {{ $attributes->merge(['class' => 'table-row border-b border-b-gray-200 hover:bg-gray-50']) }}
+>
     <div class="table-cell px-6 py-4 border-b border-b-gray-100">
-        <img class="w-10 h-10 rounded-full" src="{{ asset('storage/andrew.jpg') }}" alt="">
+        <img class="w-10 h-10 rounded-full" src="{{ asset('storage/' . $image) }}" alt="">
     </div>
-    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">Andrew</div>
-    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">Garfield</div>
-    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">andgar@gmail.com</div>
+
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
+        {{ $firstname }}
+    </div>
+
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
+        {{ $lastname }}
+    </div>
+
+    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
+        {{ $email }}
+    </div>
+
     <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
         <button class="cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="5" viewBox="0 0 20 5" fill="none">

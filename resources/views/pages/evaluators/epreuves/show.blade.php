@@ -30,7 +30,7 @@
             </div>
         </div>
     </section>
-    <section class="mt-8 border rounded-lg border-grey p-8 grid grid-cols-[1fr_2fr]">
+    <section class="mt-8 border rounded-lg border-grey p-8 grid grid-cols-[1fr_2fr] gap-8">
         <div>
             <label for="cote-global" class="text-3xl font-medium pb-2">Cote globale</label>
             <p class="text-text-light text-sm pt-2">Un texte explicatif</p>

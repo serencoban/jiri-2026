@@ -16,7 +16,7 @@
     </div>
     <div class="col-span-1 flex flex-col gap-4">
         <div class="border border-grey rounded-lg p-8">
-            <label for="cote-projet">Côte du projet : {{$title}}</label>
+            <label for="cote-projet">Côte du projet : <span class="font-semibold">{{$title}}</span></label>
             <input class="btn-search text-xl font-medium mt-2" type="number" name="cote-projet" id="cote-projet" placeholder="12">
         </div>
             <form class="flex flex-col gap-4 border border-grey rounded-lg p-8" action="" method="POST">
