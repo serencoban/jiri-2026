@@ -7,11 +7,6 @@
     --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
-@layer components{
-    .drawer{
-        @apply fixed top-0 right-0 bottom-0 w-[40vw] p-4 bg-neutral-100 shadow
-    }
-}
 @theme{
     --color-main-red: #CF4345;
     --color-white: #FFF;
@@ -23,49 +18,25 @@
     --color-grey:#E8E8E8;
 }
 
-.btn-main{
-    box-shadow: 0 1px rgb(0 0 0 / 0.05);
-    font-size: 0.875rem;
-    font-weight: 600;
-    background-color: var(--color-main-red);
-    padding:0.75rem 1.25rem;
-    border-radius: 0.5rem;
-    color: var(--color-light-white);
-    border: 1px solid var(--color-main-red);
-    transition: 0.2s;
-    display: inline-block;
-}
-.btn-main:hover{
-    background-color: var(--color-white);
-    color: var(--color-main-red);
-    border: 1px solid var(--color-main-red);
-}
-
-.btn-sec{
-    box-shadow: 0 1px rgb(0 0 0 / 0.05);
-    font-size: 0.875rem;
-    font-weight: 600;
-    background-color: var(--color-white);
-    padding:0.75rem 1.25rem;
-    border-radius: 0.5rem;
-    color: var(--color-main-red);
-    border: 1px solid var(--color-main-red);
-    transition: 0.2s;
-    display: block;
-}
-.btn-sec:hover{
-    background-color: var(--color-main-red);
-    color: var(--color-light-white);
-}
-.btn-search{
-    box-shadow: 0 1px rgb(0 0 0 / 0.05);
-    font-size: 0.875rem;
-    border: 1px solid var(--color-grey);
-    padding:0.75rem 1.25rem;
-    border-radius: 0.5rem;
-    display: inline-block;
+@layer components{
+    .drawer{
+        @apply fixed top-0 right-0 bottom-0 w-[40vw] p-4 bg-neutral-100 shadow
+    }
+    .btn-main{
+        @apply shadow-2xs text-sm font-semibold border bg-main-red border-main-red rounded-lg text-white transition duration-100 inline-block py-3 px-5
+    }
+    .btn-main:hover{
+        @apply bg-white text-main-red border border-main-red
+    }
+    .btn-sec{
+        @apply shadow-2xs text-sm font-semibold border text-main-red bg-white border-main-red rounded-lg  transition duration-100 inline-block py-3 px-5
+    }
+    .btn-sec:hover{
+        @apply bg-main-red text-white border border-main-red
+    }
+    .btn-search{
+        @apply shadow-2xs text-sm border border-grey py-3 px-5 inline-block
+    }
 }
 
-.sro{
-    display: none;
-}
+

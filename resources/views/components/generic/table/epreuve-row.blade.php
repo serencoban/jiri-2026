@@ -4,10 +4,14 @@
     <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">8h30</div>
     <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">16h30</div>
     <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
-        <select class="border p-2 rounded-lg" name="statuts" id="status">
+        <select class="border px-5 py-2 rounded-lg" name="statuts" id="status">
+
             <option value="ongoing">En cours</option>
+
             <option value="upcoming">À venir</option>
+
             <option value="completed">Terminée</option>
+
         </select>
     </div>
     <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100">
