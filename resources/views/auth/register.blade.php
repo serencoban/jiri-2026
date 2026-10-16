@@ -2,11 +2,11 @@
     <div class="bg-[url('/storage/app/public/auth-bg.png')] bg-cover bg-no-repeat col-span-7 flex items-center">
         <div class="text-white flex flex-col gap-4 items-start p-16">
             <x-icons.double-pencil/>
-            <h1 class="text-5xl font-medium">Bienvenue sur Jiri!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget cocnsequat eros. Mauris sollicitudin mattis risus et pellentesque. Suspendisse potenti. Mauris tristique velit at tristique lobortis.</p>
+            <h1 class="text-5xl font-medium">{{__('auth.title_register')}}</h1>
+            <p>{{__('auth.desc_register')}}</p>
         </div>
     </div>
-    <div class="col-span-5">
+    <div class="col-span-5 p-36 content-center">
         <x-generic.form.container
             action="{{ route('login') }}"
             method="POST"
@@ -15,28 +15,30 @@
             <x-generic.form.input
                 label="Nom"
                 name="name"
+                placeholder="Votre nom"
             />
 
             <x-generic.form.input
                 label="Email"
                 name="email"
                 type="email"
+                placeholder="Votre email"
             />
 
             <x-generic.form.input
                 label="Mot de passe"
                 name="password"
                 type="password"
+
             />
 
             <x-generic.form.input
                 label="Répéter le mot de passe"
                 name="password_confirm"
                 type="password"
+
             />
         </x-generic.form.container>
-        <div>
-            <p><a class="underline" href="{{route('password.request')}}">J'ai oublié mon mot de passe</a></p>
-        </div>
+        <a class="btn-sec w-full mt-4 text-center" href="{{route('login')}}">Déjà un compte ? Se connecter</a>
     </div>
 </x-layouts.auth>

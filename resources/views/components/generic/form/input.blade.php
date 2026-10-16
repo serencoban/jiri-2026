@@ -2,6 +2,7 @@
     'label',
     'name',
     'type' => 'text',
+    'placeholder'=>''
 ])
 
 <div>
@@ -13,8 +14,9 @@
            name="{{ $name }}"
            id="{{ $name }}"
            value="{{ old($name) }}"
+           placeholder="{{$placeholder}}"
         {{ $attributes->except(['label', 'name', 'type']) }}
-        class="border border-neutral-200 rounded-md"
+        class="w-full border border-neutral-200 rounded-md py-1 px-2 placeholder:text-sm"
     >
 
     @error($name)

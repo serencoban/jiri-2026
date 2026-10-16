@@ -1,6 +1,6 @@
 <x-layouts.admin>
     <div class="flex gap-4 items-center pb-4">
-        <h1 class="text-4xl font-medium">Les évaluateurs qui ont évalué Seren Coban</h1>
+        <h1 class="text-4xl font-medium">{{__('title.evaluated_student')}}</h1>
         <button @click="$dispatch('open-drawer')">
             <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
                 <path d="M8 0.5H26C30.1421 0.5 33.5 3.85786 33.5 8V26C33.5 30.1421 30.1421 33.5 26 33.5H8C3.85786 33.5 0.5 30.1421 0.5 26V8C0.5 3.85786 3.85786 0.5 8 0.5Z" fill="#FAFAFA" stroke="#CF4345"/>
@@ -14,7 +14,7 @@
         <span>14/20</span>
     </div>
     <section class="pt-8">
-        <h2 class="sr-only">Les projet de Seren</h2>
+        <h2 class="sr-only">{{__('title.students_projects')}}</h2>
         <div x-data="{ selectedTab: 'portfolio' }" class="w-full">
             <x-generic.projects.projects-tab/>
             <div class="border rounded-b-lg border-grey border-t-0 p-8">
