@@ -51,7 +51,7 @@
             </div>
             <div class="flex items-center gap-4 bg-light-white rounded-lg p-4">
                 <img class="mb-2 w-12 h-12 rounded-full" src="{{ asset('storage/cat1.jpg') }}" alt="">
-                <span class="font-medium text-sm">Madame Admina</span>
+                <a href="{{route('profile')}}" class="font-medium text-sm">Compte</a>
             </div>
         </div>
     </aside>

@@ -49,6 +49,4 @@
         evaluators_seen="7"
         contact_view="élèves"
     />
-
-
 </div>
