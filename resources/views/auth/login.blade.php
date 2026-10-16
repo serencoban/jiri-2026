@@ -2,11 +2,11 @@
     <div class="bg-[url('/storage/app/public/auth-bg.png')] bg-cover bg-no-repeat col-span-7 flex items-center">
         <div class="text-white flex flex-col gap-4 items-start p-16">
             <x-icons.double-pencil/>
-            <h1 class="text-5xl font-medium">Heureux de vous revoir sur Jiri!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget cocnsequat eros. Mauris sollicitudin mattis risus et pellentesque. Suspendisse potenti. Mauris tristique velit at tristique lobortis.</p>
+            <h1 class="text-5xl font-medium">{{__('auth.title_login')}}</h1>
+            <p>{{__('auth.desc_login')}}</p>
         </div>
     </div>
-    <div class="col-span-5">
+    <div class="col-span-5 p-36 content-center">
         <x-generic.form.container
             action="{{ route('login') }}"
             method="POST"
@@ -16,6 +16,7 @@
                 label="Email"
                 name="email"
                 type="email"
+                placeholder="Votre nom"
             />
 
             <x-generic.form.input
@@ -24,8 +25,7 @@
                 type="password"
             />
         </x-generic.form.container>
-        <div>
-            <p><a class="underline" href="{{route('password.request')}}">J'ai oublié mon mot de passe</a></p>
-        </div>
+        <a class="btn-sec w-full mt-4 text-center" href="{{route('register')}}">Pas de compte ? Se créer un compte</a>
+        <p class="text-center pt-2 text-sm text-text-light"><a class="underline hover:text-main-red" href="{{route('password.request')}}">{{__('auth.forgot_password')}}</a></p>
     </div>
 </x-layouts.auth>
