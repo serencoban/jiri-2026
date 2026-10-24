@@ -16,13 +16,14 @@
                 label="Email"
                 name="email"
                 type="email"
-                placeholder="Votre nom"
+                placeholder="Votre email"
             />
 
             <x-generic.form.input
                 label="Mot de passe"
                 name="password"
                 type="password"
+                placeholder="Votre mot de passe"
             />
         </x-generic.form.container>
         <a class="btn-sec w-full mt-4 text-center" href="{{route('register')}}">Pas de compte ? Se créer un compte</a>

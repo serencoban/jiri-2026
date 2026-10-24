@@ -6,7 +6,7 @@
 
 <div class="p-4 border rounded-lg border-grey">
     <div class="flex justify-between pb-4 items-center">
-        <h2 class="text-2xl">{{$title}}</h2>
+        <h3 class="text-2xl">{{$title}}</h3>
         @if($show_weighting)
             <span class=" text-xl font-medium">{{$weighting}}%</span>
         @endif

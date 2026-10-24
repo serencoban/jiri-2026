@@ -49,10 +49,11 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex items-center gap-4 bg-light-white rounded-lg p-4">
+            <a href="{{route('profile')}}" class="flex items-center gap-4 border border-t-neutral-100 border-x-0 border-b-0 p-4 hover:text-main-red">
                 <img class="mb-2 w-12 h-12 rounded-full" src="{{ asset('storage/cat1.jpg') }}" alt="">
-                <a href="{{route('profile')}}" class="font-medium text-sm">Compte</a>
-            </div>
+                <span class="font-medium text-sm">Dominique Vilain</span>
+            </a>
+
         </div>
     </aside>
     <main class="p-8 ml-64">
