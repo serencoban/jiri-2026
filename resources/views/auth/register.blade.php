@@ -29,6 +29,7 @@
                 label="Mot de passe"
                 name="password"
                 type="password"
+                placeholder="Au moins 8 caractères"
 
             />
 
@@ -36,6 +37,7 @@
                 label="Répéter le mot de passe"
                 name="password_confirm"
                 type="password"
+                placeholder="Au moins 8 caractères"
 
             />
         </x-generic.form.container>

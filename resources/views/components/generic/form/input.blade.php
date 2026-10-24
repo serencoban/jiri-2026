@@ -16,7 +16,7 @@
            value="{{ old($name) }}"
            placeholder="{{$placeholder}}"
         {{ $attributes->except(['label', 'name', 'type']) }}
-        class="w-full border border-neutral-200 rounded-md py-1 px-2 placeholder:text-sm"
+        class="w-full border border-neutral-200 rounded-md py-1 px-2 placeholder:text-xs"
     >
 
     @error($name)
