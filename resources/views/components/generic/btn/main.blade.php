@@ -1,4 +1,8 @@
 @props([
-    'title'
+    'title',
+    'type' => 'button',
 ])
-<a href="#" class="btn-main">{{$title}}</a>
+
+<button type="{{ $type }}" {{ $attributes->merge(['class' => 'btn-main']) }}>
+    {{ $title }}
+</button>
