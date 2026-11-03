@@ -12,4 +12,8 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'title_request'=>'Mot de passe oublié',
+    'desc_request'=>'Entrez votre adresse email pour recevoir un lien de réinitialisation.',
+    'title_reset'=>'Réinitialiser le mot de passe',
+    'desc_reset'=>'Choisissez un nouveau mot de passe pour votre compte.'
 ];

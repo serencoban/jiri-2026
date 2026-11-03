@@ -11,4 +11,8 @@ return [
     'failed' => 'Ces identifiants ne correspondent pas à nos enregistrements.',
     'password' => 'Le mot de passe fourni est incorrect.',
     'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans :seconds secondes.',
+    'title_request'=>'Mot de passe oublié',
+    'desc_request'=>'Entrez votre adresse email pour recevoir un lien de réinitialisation.',
+    'title_reset'=>'Réinitialiser le mot de passe',
+    'desc_reset'=>'Choisissez un nouveau mot de passe pour votre compte.'
 ];
