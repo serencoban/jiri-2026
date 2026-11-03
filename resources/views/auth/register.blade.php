@@ -8,7 +8,7 @@
     </div>
     <div class="col-span-5 p-36 content-center">
         <x-generic.form.container
-            action="{{ route('login') }}"
+            action="{{ route('register') }}"
             method="POST"
             btn="Se créer un compte"
         >
@@ -34,8 +34,8 @@
             />
 
             <x-generic.form.input
-                label="Répéter le mot de passe"
-                name="password_confirm"
+                label="Confirmer le mot de passe"
+                name="password_confirmation"
                 type="password"
                 placeholder="Au moins 8 caractères"
 
