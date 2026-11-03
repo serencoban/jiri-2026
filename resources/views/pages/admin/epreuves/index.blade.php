@@ -19,4 +19,6 @@
             <x-admin.epreuves.list/>
         </div>
     </div>
+
 </x-layouts.admin>
+
