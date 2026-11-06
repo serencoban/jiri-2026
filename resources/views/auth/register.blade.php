@@ -15,14 +15,20 @@
             <x-generic.form.input
                 label="Nom"
                 name="name"
-                placeholder="Votre nom"
+                placeholder="ex : Doe"
+            />
+
+            <x-generic.form.input
+                label="Prénom"
+                name="prenom"
+                placeholder="ex : Jane"
             />
 
             <x-generic.form.input
                 label="Email"
                 name="email"
                 type="email"
-                placeholder="Votre email"
+                placeholder="ex : nom@xyz.com"
             />
 
             <x-generic.form.input

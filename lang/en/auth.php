@@ -8,12 +8,14 @@ return [
     'forgot_password' => 'I forgot my password',
     'register' => 'Create an account',
     'login' => 'Log in',
-    'logout'=>'Se déconnecter',
+    'logout' => 'Log out',
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'title_request'=>'Mot de passe oublié',
-    'desc_request'=>'Entrez votre adresse email pour recevoir un lien de réinitialisation.',
-    'title_reset'=>'Réinitialiser le mot de passe',
-    'desc_reset'=>'Choisissez un nouveau mot de passe pour votre compte.'
+    'title_request' => 'Forgot Password',
+    'desc_request' => 'Enter your email address to receive a password reset link.',
+    'title_reset' => 'Reset Password',
+    'desc_reset' => 'Choose a new password for your account.',
+    'send_link'=>'Send a link',
+    'back'=>'Go back to the connexion page'
 ];

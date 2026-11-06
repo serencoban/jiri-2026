@@ -1,18 +1,20 @@
 <x-layouts.admin>
-    <h1 class="text-4xl pb-8">{{__('title.contacts_list')}}</h1>
-    <div class="flex justify-end pb-4">
-        <x-generic.table.table-filter.search-input/>
-        <x-generic.btn.main title="Ajouter un contact"/>
+    <div class="flex items-center justify-between mb-10">
+        <h1 class="text-4xl">{{__('title.contacts_list')}}</h1>
+        <div class="flex" x-data>
+            <x-generic.table.table-filter.search-input/>
+            <button type="button" @click="$dispatch('open-modal')" class="btn-main">{{__('actions.add_contact')}}</button>
+        </div>
     </div>
     <div>
         <div class="table w-full table-auto rounded-lg overflow-hidden">
             <div class="table-header-group font-semibold bg-light-white">
                 <div class="table-row">
-                    <div class="table-cell px-6 py-4 text-center">{{__('table.profile')}}</div>
-                    <div class="table-cell px-6 py-4 text-center">{{__('table.firstname')}}</div>
-                    <div class="table-cell px-6 py-4 text-center">{{__('table.lastname')}}</div>
-                    <div class="table-cell px-6 py-4 text-center">{{__('table.email')}}</div>
-                    <div class="table-cell px-6 py-4 text-center">{{__('table.actions')}}</div>
+                    <x-generic.table.header title="Profile" />
+                    <x-generic.table.header title="Prénom" />
+                    <x-generic.table.header title="Nom" />
+                    <x-generic.table.header title="Email" />
+                    <x-generic.table.header title="Actions" />
                 </div>
             </div>
             <x-admin.contacts.list/>

@@ -1,4 +1,6 @@
 <?php
 return [
-    'add_project'=>'Add a project',
+    'add_project'=>'Ajouter un projet',
+    'add_contact'=>'Ajouter un contact',
+    'add_jiri'=>'Ajouter un jiri'
 ];

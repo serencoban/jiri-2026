@@ -16,7 +16,7 @@
         />
     </div>
 </div>
-<div class="grid grid-cols-6 gap-8">
+<div class="grid grid-cols-6 gap-4">
     @for($i=0;$i<10;$i++)
         <x-admin.students.evaluated-card/>
     @endfor

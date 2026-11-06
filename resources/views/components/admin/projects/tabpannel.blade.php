@@ -16,8 +16,8 @@
     </div>
     <div class="col-span-1 border border-grey rounded-lg p-8 flex flex-col justify-between">
         <div>
-            <div class="flex gap-4 items-center pb-4">
-                <span>L'évaluation d'Andrew Garfield</span>
+            <div class="flex justify-between items-center pb-4">
+                <span class="font-medium">L'évaluation d'Andrew Garfield</span>
                 <button type="button" @click="$dispatch('open-drawer', {form: 'evaluators.students.list'})" class="cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
                         <path d="M8 0.5H26C30.1421 0.5 33.5 3.85786 33.5 8V26C33.5 30.1421 30.1421 33.5 26 33.5H8C3.85786 33.5 0.5 30.1421 0.5 26V8C0.5 3.85786 3.85786 0.5 8 0.5Z" fill="#FAFAFA" stroke="#CF4345"/>
@@ -26,8 +26,10 @@
                     </svg>
                 </button>
             </div>
-            <span class="">Côte du Portfolio</span>
-            <span>12/20</span>
+            <div class="flex justify-between mt-4 text-xl">
+                <span class="">Côte du Portfolio</span>
+                <span>12/20</span>
+            </div>
         </div>
         <a class="btn-main" href="#">Supprimer l'épreuve</a>
     </div>

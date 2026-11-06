@@ -3,7 +3,7 @@
 return [
     'login' => 'Happy to see you again on Jiri!',
     'register' => 'Welcome to Jiri!',
-    'epreuves'=>'Liste des épreuves',
+    'epreuves'=>'Liste des Jiri',
     'epreuve'=>'Bienvenue sur : x',
     'students_list'=>'La liste des élèves',
     'evaluators_list'=>'La liste des évaluateurs',

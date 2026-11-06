@@ -1,8 +1,10 @@
 <x-layouts.admin>
-    <h1 class="text-4xl pb-8">Liste des projets</h1>
-    <div class="flex justify-end pb-8">
-        <x-generic.table.table-filter.search-input/>
-        <x-generic.btn.main title="Ajouter un projet"/>
+    <div class="flex items-center justify-between mb-10">
+        <h1 class="text-4xl">{{__('title.projects_list')}}</h1>
+        <div class="flex" x-data>
+            <x-generic.table.table-filter.search-input/>
+            <button type="button" @click="$dispatch('open-modal')" class="btn-main">{{__('actions.add_project')}}</button>
+        </div>
     </div>
     <div class="grid grid-cols-3 gap-8">
         <x-generic.projects.card-project title="Portfolio" :show_weighting="false" />
