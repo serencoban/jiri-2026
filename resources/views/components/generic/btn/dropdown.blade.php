@@ -4,7 +4,7 @@
 ])
 
 <div x-data="{ isOpen: false, openedWithKeyboard: false }"
-    class="relative w-fit"
+    class="relative w-fit inline"
      @click.stop
     x-on:keydown.esc.window="isOpen = false; openedWithKeyboard = false"
 >
@@ -32,7 +32,7 @@
         x-on:click.outside="isOpen = false; openedWithKeyboard = false"
         x-on:keydown.down.prevent="$focus.wrap().next()"
         x-on:keydown.up.prevent="$focus.wrap().previous()"
-        class="absolute top-11 left-0 z-20 flex justify-start min-w-48 flex-col overflow-hidden rounded-lg border border-main-red bg-light-white"
+        class="absolute top-11 left-0 z-20 flex justify-start min-w-48 flex-col overflow-hidden rounded-lg border border-main-red bg-white"
         role="menu"
     >
         @foreach($items as $item)

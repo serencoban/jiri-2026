@@ -16,7 +16,7 @@
                 label="Email"
                 name="email"
                 type="email"
-                placeholder="Votre email"
+                placeholder="ex : nom@xyz.com"
             />
 
             <x-generic.form.input

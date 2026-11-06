@@ -11,7 +11,7 @@
     </div>
     <div>
         <span>Côte globale de l'élève:</span>
-        <span>14/20</span>
+        <span>16/20</span>
     </div>
     <section class="pt-8">
         <h2 class="sr-only">{{__('title.students_projects')}}</h2>

@@ -6,7 +6,7 @@
 ])
 
 <div>
-    <label for="{{ $name }}" class="block mb-1">
+    <label for="{{ $name }}" class="block mb-1 font-medium">
         {{ $label }}
     </label>
 
@@ -16,7 +16,7 @@
            value="{{ old($name) }}"
            placeholder="{{$placeholder}}"
         {{ $attributes->except(['label', 'name', 'type']) }}
-        class="w-full border border-neutral-200 rounded-md py-1 px-2 placeholder:text-xs"
+        class="w-full border border-neutral-200 rounded-md py-2 px-3"
     >
 
     @error($name)

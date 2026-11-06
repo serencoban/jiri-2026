@@ -23,6 +23,10 @@
     .drawer{
         @apply fixed top-0 right-0 bottom-0 w-[40vw] p-4 bg-neutral-100 shadow
     }
+
+    .modal {
+        @apply fixed top-1/2 left-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-8 shadow-lg;
+    }
     .btn-main{
         @apply shadow-2xs text-sm font-semibold border bg-main-red border-main-red rounded-lg text-white transition duration-100 inline-block py-3 px-5
     }
