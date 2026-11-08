@@ -21,6 +21,7 @@ class ProjectFactory extends Factory
             'name' => fake()->words(2, true),
             'description' => fake()->sentence(),
             'project_url' => fake()->url(),
+            'brief_url' => fake()->sentence(),
             'repo_url' => fake()->url(),
         ];
     }

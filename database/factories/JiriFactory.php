@@ -18,7 +18,7 @@ class JiriFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->words(3, true),
+
             'date' => fake()->dateTimeBetween('now', '+1 year')->format('Y-m-d'),
             'begins_at' => '08:30',
             'ends_at' => '17:30',

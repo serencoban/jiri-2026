@@ -11,8 +11,8 @@
     <div class="table-cell px-6 py-4 border-b border-b-gray-100">
         <img
             class="w-10 h-10 rounded-full mx-auto"
-            src="{{ asset('storage/' . $image) }}"
-            alt="Photo de x"
+            src="{{asset('storage/cat1.jpg') }}"
+            alt="Photo de {{ $firstname }} {{ $lastname }}"
         >
     </div>
 

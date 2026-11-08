@@ -13,6 +13,7 @@ class ProjectSeeder extends Seeder
             'name' => 'Portfolio',
             'description' => 'Portfolio personnel',
             'project_url' => 'https://example.com',
+            'brief_url' => 'This is a brief of the current Project',
             'repo_url' => 'https://github.com/example/portfolio',
         ]);
     }

@@ -1,22 +1,29 @@
 <?php
 
+use App\Models\Contact;
+use App\Models\Jiri;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
     Route::get('/', function () {
-        return view('pages.admin.epreuves.index');
+        $jiris = Jiri::paginate(10);
+        return view('pages.admin.epreuves.index', compact('jiris'));
     })->name('epreuves');
 
     Route::get('/contacts', function () {
-        return view('pages.admin.contacts.index');
+        $contacts = Contact::paginate(10);
+        return view('pages.admin.contacts.index',compact('contacts'));
     })->name('contacts');
 
     Route::get('/projects', function () {
-        return view('pages.admin.projets.index');
+        $projects = Project::paginate(6);
+        return view('pages.admin.projets.index', compact('projects'));
     })->name('projects');
 
-    Route::get('/epreuves/show', function () {
-        return view('pages.admin.epreuves.show');
+    Route::get('/epreuves/{jiri}', function (Jiri $jiri) {
+        $jiri->load('projects.tasks');
+        return view('pages.admin.epreuves.show', compact('jiri'));
     })->name('epreuves.show');
 
     Route::get('/epreuves/students/index', function () {
