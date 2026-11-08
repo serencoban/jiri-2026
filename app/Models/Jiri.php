@@ -20,7 +20,8 @@ class Jiri extends Model
 
     public function projects(): BelongsToMany
     {
-        return $this->belongsToMany(Project::class, 'assignments');
+        return $this->belongsToMany(Project::class, 'assignments')
+            ->withPivot('weight');
     }
 
 }

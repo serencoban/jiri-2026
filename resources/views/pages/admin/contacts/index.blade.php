@@ -17,7 +17,10 @@
                     <x-generic.table.header title="Actions" />
                 </div>
             </div>
-            <x-admin.contacts.list/>
+            <x-admin.contacts.list :contacts="$contacts"/>
+        </div>
+        <div class="mt-6">
+            {{ $contacts->links() }}
         </div>
     </div>
 </x-layouts.admin>

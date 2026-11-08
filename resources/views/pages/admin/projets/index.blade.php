@@ -7,8 +7,14 @@
         </div>
     </div>
     <div class="grid grid-cols-3 gap-8">
-        <x-generic.projects.card-project title="Portfolio" :show_weighting="false" />
-        <x-generic.projects.card-project title="Site reproduction" :show_weighting="false" />
-        <x-generic.projects.card-project title="Le Vieux Moulin" :show_weighting="false" />
+        @foreach($projects as $project)
+            <x-generic.projects.card-project
+                :project="$project"
+                :show-weighting="false"
+            />
+        @endforeach
+    </div>
+    <div class="mt-6">
+        {{ $projects->links() }}
     </div>
 </x-layouts.admin>

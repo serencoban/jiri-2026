@@ -22,7 +22,10 @@
                     <x-generic.table.header title="Actions" />
                 </div>
             </div>
-            <x-admin.epreuves.list/>
+            <x-admin.epreuves.list :jiris="$jiris"/>
+        </div>
+        <div class="mt-6">
+            {{ $jiris->links() }}
         </div>
     </div>
 
