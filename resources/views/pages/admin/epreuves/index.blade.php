@@ -6,7 +6,10 @@
             <button type="button" @click="$dispatch('open-add-jiri')" class="btn-main">{{__('actions.add_jiri')}}</button>
         </div>
     </div>
-        <livewire:generic.modals.add-jiri />
+        <livewire:generic.modals.epreuves.add-jiri />
+        <livewire:generic.modals.epreuves.add-evaluators/>
+        <livewire:generic.modals.epreuves.add-evaluated/>
+        <livewire:generic.modals.epreuves.add-projects/>
     <div>
         <div class="table w-full table-auto rounded-lg overflow-hidden">
             <div class="table-header-group font-semibold bg-light-white ">
