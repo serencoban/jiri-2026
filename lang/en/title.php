@@ -12,4 +12,5 @@ return [
     'evaluated_student' => 'Evaluators Who Assessed Seren Coban',
     'students_projects' => 'Seren\'s Projects',
     'student_evaluation' => 'Evaluation of Seren Coban',
+    'profile_page'=>'Page de profile'
 ];

@@ -1,6 +1,6 @@
-<x-layouts.admin>
+<x-layouts.admin :title="__('title.profile_page')">
  <div class="grid grid-cols-12 h-screen gap-8">
-     <h1 class="sr-only">Page de profile</h1>
+     <h1 class="sr-only">{{__('title.profile_page')}}</h1>
      <section class="flex justify-between flex-col col-span-4 border border-neutral-100 rounded-lg p-8">
         <h2 class="sr-only">Details de Dominique Vilain</h2>
         <div>

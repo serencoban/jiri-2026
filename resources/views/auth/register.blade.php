@@ -1,4 +1,4 @@
-<x-layouts.auth>
+<x-layouts.auth title="S'enregistrer">
     <div class="bg-[url('/storage/app/public/auth-bg.png')] bg-cover bg-no-repeat col-span-7 flex items-center">
         <div class="text-white flex flex-col gap-4 items-start p-16">
             <x-icons.double-pencil/>

@@ -1,4 +1,4 @@
-<x-layouts.auth>
+<x-layouts.auth title="Changement du mot de passe">
     <div class="col-span-12 flex min-h-screen items-center justify-center bg-neutral-50 px-4">
 
         <form

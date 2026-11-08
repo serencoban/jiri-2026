@@ -1,4 +1,4 @@
-<x-layouts.auth>
+<x-layouts.auth title="Changement de mot de passe">
     <div class="col-span-12 flex flex-col min-h-screen items-center justify-center bg-neutral-50 px-4">
         <span>
             <img class="mx-auto mb-4"  src="{{ asset('storage/jiri-logo.svg') }}" alt="Logo Jiri">
