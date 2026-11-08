@@ -1,4 +1,4 @@
-<x-layouts.admin>
+<x-layouts.admin :title="__('title.epreuves')">
     <div class="flex justify-between pb-20">
         <h1 class="text-4xl font-medium">Bienvenue sur Épreuve 27</h1>
         <x-generic.btn.main title="Clôturer l'épreuve"/>

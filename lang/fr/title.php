@@ -12,4 +12,5 @@ return [
     'evaluated_student'=>'Les évaluateurs qui ont évalué Seren Coban',
     'students_projects'=>'Les projets de Seren',
     'student_evaluation'=>'Evaluation de Seren Coban',
+    'profile_page'=>'Page de profile'
 ];
