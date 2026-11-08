@@ -12,10 +12,14 @@ new class extends Component
         $this->open = false;
     }
 
-    #[On('open-add-jiri')]
+    #[On('open-add-projects')]
     public function open()
     {
         $this->open = true;
+    }
+
+    public function submit(){
+        $this->open= false;
     }
 };
 ?>
@@ -32,7 +36,12 @@ new class extends Component
          @keyup.escape.window="$wire.close()"
          class="modal"
     >
-        <h1>Test 1</h1>
-        <button @click="$wire.close()" class="block w-full cursor-pointer text-right">✕</button>
+        <form action="" method="get">
+            <x-generic.modals.steps :current-step="4" />
+
+            <h2 class="font-semibold text-2xl mb-8">{{__('actions.add_projects')}}</h2>
+            <x-generic.table.table-filter.search-input/>
+            <button type="submit" class="btn-main w-full mt-4" wire:click="submit">{{__('actions.create_jiri')}}</button>
+        </form>
     </div>
 </div>
