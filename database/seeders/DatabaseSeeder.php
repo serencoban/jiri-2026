@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Contact;
+use App\Models\Invitation;
 use App\Models\Jiri;
 use App\Models\Project;
 use App\Models\Task;
@@ -37,8 +38,8 @@ class DatabaseSeeder extends Seeder
 
         Contact::factory(20)->create();
         Project::factory(10)->create();
-        Jiri::factory(5)->create();
         Task::factory(6)->create();
+        Invitation::factory(2)->create();
     }
 
 }

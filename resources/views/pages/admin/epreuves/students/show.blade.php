@@ -1,4 +1,4 @@
-<x-layouts.admin>
+<x-layouts.admin title="Les projets de Seren">
     <div class="flex justify-between pb-4">
         <div class="flex gap-4 items-center">
             <h1 class="text-4xl font-medium">{{__('title.student_evaluation')}}</h1>

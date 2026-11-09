@@ -1,4 +1,4 @@
-<x-layouts.admin>
+<x-layouts.admin title="Les côtes de Seren">
     <div class="flex gap-4 items-center pb-4">
         <h1 class="text-4xl font-medium">{{__('title.evaluated_student')}}</h1>
         <button @click="$dispatch('open-drawer')">
