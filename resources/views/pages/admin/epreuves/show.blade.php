@@ -1,6 +1,10 @@
 <x-layouts.admin :title="__('title.epreuves')">
     <div class="flex justify-between pb-20">
         <h1 class="text-4xl font-medium">Bienvenue sur Épreuve 27</h1>
+        <form action="{{route('send-invitation')}}" method="post">
+            @csrf
+            <button type="submit">Envoyer l'invitation</button>
+        </form>
         <x-generic.btn.main title="Clôturer l'épreuve"/>
     </div>
     <section class="pb-20">

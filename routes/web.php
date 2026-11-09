@@ -46,4 +46,10 @@ Route::middleware('auth')->group(function(){
         return view('pages.admin.profile.index');
     })->name('profile');
 
+    Route::post('/send-invitation', function () {
+        $invitationToSend = \App\Models\Invitation::latest()->first();
+        Mail::to('s@c.com')->queue(new \App\Mail\Invitation($invitationToSend));
+        return 'L’invitation a été mise dans la file d’attente';
+    })->name('send-invitation');
+
 });
