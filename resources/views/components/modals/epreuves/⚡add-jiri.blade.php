@@ -38,7 +38,7 @@ new class extends Component
          class="modal"
     >
         <form action="" method="get">
-            <x-generic.modals.steps :current-step="1" />
+            <x-modals.steps :current-step="1" />
 
             <h2 class="font-semibold text-2xl mb-8">{{__('actions.add_jiri')}}</h2>
             <x-generic.form.input

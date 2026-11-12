@@ -8,6 +8,7 @@ return [
     'forgot_password'=>'J‘ai oublié mon mot de passe',
     'register'=>'Se créer un compte',
     'login'=>'Se connecter',
+    'logout'=>'Se déconnecter',
     'failed' => 'Ces identifiants ne correspondent pas à nos enregistrements.',
     'password' => 'Le mot de passe fourni est incorrect.',
     'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans :seconds secondes.',

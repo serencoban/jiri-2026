@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('jiris', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->date('date');
             $table->time('begins_at');

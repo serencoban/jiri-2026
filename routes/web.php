@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function(){
     Route::get('/', function () {
-        $jiris = Jiri::paginate(10);
+        $jiris = auth()->user()->jiris()->paginate(10);
         return view('pages.admin.epreuves.index', compact('jiris'));
     })->name('epreuves');
 

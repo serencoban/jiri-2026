@@ -12,5 +12,9 @@ return [
     'evaluated_student' => 'Evaluators Who Assessed Seren Coban',
     'students_projects' => 'Seren\'s Projects',
     'student_evaluation' => 'Evaluation of Seren Coban',
-    'profile_page'=>'Page de profile'
+    'profile_page'=>'Page de profile',
+    'profile_details'=>'Détails sur Dominique Vilain',
+    'profile_supp'=>'Informations supplémentaires',
+    'recent_jiri'=>'Les jiri les plus récentes',
+    'upcoming_jiri'=>'Les jiri à venir',
 ];

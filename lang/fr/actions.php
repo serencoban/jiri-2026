@@ -8,4 +8,7 @@ return [
     'add_projects'=>'Ajouter les projets',
     'next'=>'Suivant',
     'create_jiri'=>'Créer le jiri',
+    'create_contact'=>'Créer le contact',
+    'send_invitation'=>'Envoyer l‘invitation',
+    'search'=>'Chercher'
 ];

@@ -1,4 +1,4 @@
-<x-layouts.evaluators>
+<x-layouts.evaluators title="Liste des élèves">
     <div class="flex justify-between pb-20">
         <h1 class="text-4xl font-medium">Bienvenue sur l'épreuve 27</h1>
     </div>
