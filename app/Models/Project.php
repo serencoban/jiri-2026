@@ -16,7 +16,7 @@ class Project extends Model
 
     public function jiris(): BelongsToMany
     {
-        return $this->belongsToMany(Jiri::class, 'jiri_project');
+        return $this->belongsToMany(Jiri::class, 'assignments');
     }
     public function tasks(): HasMany
     {

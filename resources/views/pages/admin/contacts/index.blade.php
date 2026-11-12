@@ -3,7 +3,7 @@
         <h1 class="text-4xl">{{__('title.contacts_list')}}</h1>
         <div class="flex" x-data>
             <x-generic.table.table-filter.search-input/>
-            <button type="button" @click="$dispatch('open-modal')" class="btn-main">{{__('actions.add_contact')}}</button>
+            <button type="button" @click="$dispatch('open-add-contact')" class="btn-main">{{__('actions.add_contact')}}</button>
         </div>
     </div>
     <div>

@@ -12,7 +12,7 @@ new class extends Component
         $this->open = false;
     }
 
-    #[On('open-add-evaluators')]
+    #[On('open-add-evaluated')]
     public function open()
     {
         $this->open = true;
@@ -20,7 +20,7 @@ new class extends Component
 
     public function nextModal(){
         $this->open= false;
-        $this->dispatch('open-add-evaluated');
+        $this->dispatch('open-add-projects');
     }
 };
 ?>
@@ -38,8 +38,8 @@ new class extends Component
          class="modal"
     >
         <form action="" method="get">
-            <x-generic.modals.steps :current-step="2" />
-            <h2 class="font-semibold text-2xl mb-8">{{__('actions.add_evaluators')}}</h2>
+            <x-modals.steps :current-step="3" />
+            <h2 class="font-semibold text-2xl mb-8">{{__('actions.add_evaluated')}}</h2>
             <x-generic.table.table-filter.search-input/>
             <button type="button" class="btn-main w-full mt-4" wire:click="nextModal">{{__('actions.next')}}</button>
         </form>

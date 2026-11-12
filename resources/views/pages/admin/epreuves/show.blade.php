@@ -1,15 +1,15 @@
-<x-layouts.admin :title="__('title.epreuves')">
+<x-layouts.admin :title="$jiri->name">
     <div class="flex justify-between pb-20">
-        <h1 class="text-4xl font-medium">Bienvenue sur Épreuve 27</h1>
+        <h1 class="text-4xl font-medium"> {{ $jiri->name }}</h1>
         <form action="{{route('send-invitation')}}" method="post">
             @csrf
-            <button type="submit">Envoyer l'invitation</button>
+            <button type="submit">{{__('actions.send_invitation')}}</button>
         </form>
         <x-generic.btn.main title="Clôturer l'épreuve"/>
     </div>
     <section class="pb-20">
         <div class="flex justify-between">
-            <h2 class="text-3xl font-medium">Liste des élèves</h2>
+            <h2 class="text-3xl font-medium">{{__('title.students_list')}}</h2>
             <div class="flex pb-4">
                 <x-generic.table.table-filter.search-input/>
                 <x-generic.btn.main title="Ajouter une épreuve"/>
@@ -19,7 +19,7 @@
     </section>
     <section class="pb-20">
         <div class="flex justify-between">
-            <h2 class="text-3xl font-medium">Liste des évaluateurs</h2>
+            <h2 class="text-3xl font-medium">{{__('title.evaluators_list')}}</h2>
             <div class="flex pb-4">
                 <x-generic.table.table-filter.search-input/>
                 <x-generic.btn.main title="Ajouter un évaluateur"/>
@@ -30,7 +30,7 @@
     <section class="pb-20">
         <div class="flex justify-between mb-2">
             <div class="flex gap-4 items-center">
-                <h2 class="text-3xl font-medium">Liste des projets</h2>
+                <h2 class="text-3xl font-medium">{{__('title.projects_list')}}</h2>
                 <div class="tooltip-ponderation">
                     <x-generic.projects.tooltip/>
                 </div>

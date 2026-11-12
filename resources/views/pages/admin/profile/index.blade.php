@@ -1,93 +1,100 @@
 <x-layouts.admin :title="__('title.profile_page')">
- <div class="grid grid-cols-12 h-screen gap-8">
-     <h1 class="sr-only">{{__('title.profile_page')}}</h1>
-     <section class="flex justify-between flex-col col-span-4 border border-neutral-100 rounded-lg p-8">
-        <h2 class="sr-only">Details de Dominique Vilain</h2>
-        <div>
-            <div class="flex justify-center">
-                <div class="relative mb-10">
-                    <div class="h-40 w-40  bg-red-50 rounded-full">
-                        <img src="" alt="">
+    <div class="grid grid-cols-12 gap-8 min-h-[calc(100vh-4rem)]">
+        <h1 class="sr-only">{{ __('title.profile_page') }}</h1>
+        <section class="col-span-4 flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-8 shadow-s">
+            <h2 class="sr-only">{{ __('title.profile_details') }}</h2>
+            <div>
+                <div class="flex justify-center mb-10">
+                    <div class="relative">
+                        <div class="flex h-36 w-36 items-center justify-center rounded-full bg-red-50 text-4xl font-semibold text-main-red">
+                            {{ strtoupper(substr(auth()->user()->firstname, 0, 1)) }}
+                            {{ strtoupper(substr(auth()->user()->lastname, 0, 1)) }}
+                        </div>
+                        <div class="absolute bottom-1 right-2 h-8 w-8 rounded-full border-4 border-white bg-red-200"></div>
                     </div>
-                    <div class="absolute h-10 w-10 bottom-0 left-25 bg-red-200 rounded-full"></div>
+                </div>
+                <div class="rounded-xl">
+                    <x-admin.profile.user-info
+                        info="Nom"
+                        :info_details="auth()->user()->firstname . ' ' . auth()->user()->lastname"
+                    />
+                    <x-admin.profile.user-info
+                        info="Email"
+                        :info_details="auth()->user()->email"
+                    />
+                    <x-admin.profile.user-info
+                        info="Compte créé le"
+                        info_details="11/07/2019"
+                    />
+                    <div class="flex items-center justify-between border-b border-neutral-200 py-4">
+                        <span class="text-sm text-neutral-500">Langue</span>
+                        <div class="flex rounded-lg bg-neutral-100 p-1">
+                            <button type="button" class="rounded-md bg-white px-3 py-1 text-sm font-medium shadow-sm">FR</button>
+                            <button type="button" class="rounded-md px-3 py-1 text-sm text-neutral-500 hover:text-neutral-900">EN</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <form action="{{ route('logout') }}" method="POST" class="mt-10">
+                @csrf
+                <button class="btn-main w-full" type="submit">{{ __('auth.logout') }}</button>
+            </form>
+        </section>
+        <section class="col-span-8 rounded-2xl border border-neutral-200 bg-white p-8 shadow-s">
+            <h2 class="sr-only">{{ __('title.profile_supp') }}</h2>
+            <div class="pb-8">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold">{{ __('title.recent_jiri') }}</h3>
+                    <p class="mt-1 text-sm text-neutral-400">Vos dernières épreuves terminées</p>
+                </div>
+                <div class="grid grid-cols-3 gap-5">
+                    <x-admin.profile.epreuve-info
+                        title="Epreuve 27"
+                        date="11/09/2027"
+                        link="Récapitulatif"
+                        link_title="Aller vers le récapitulatif"
+                    />
+                    <x-admin.profile.epreuve-info
+                        title="Epreuve 27"
+                        date="11/09/2027"
+                        link="Récapitulatif"
+                        link_title="Aller vers le récapitulatif"
+                    />
+                    <x-admin.profile.epreuve-info
+                        title="Epreuve 27"
+                        date="11/09/2027"
+                        link="Récapitulatif"
+                        link_title="Aller vers le récapitulatif"
+                    />
+                </div>
+            </div>
+            <div class="pt-10">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold">{{ __('title.upcoming_jiri') }}</h3>
+                    <p class="mt-1 text-sm text-neutral-400">vos prochaines épreuves</p>
+                </div>
 
-            <x-admin.profile.user-info
-                info="Nom"
-                info_details="Dominique Vilain"
-            />
-            <x-admin.profile.user-info
-                info="Email"
-                info_details="dom@v.com"
-            />
-            <x-admin.profile.user-info
-                info="Compte crée le"
-                info_details="11/07/2019"
-            />
-            <x-admin.profile.user-info
-                info="Langue"
-                info_details="Français"
-            />
-        </div>
-
-        <form action="{{route('logout')}}" method="POST">
-            @csrf
-            <button class="btn-main block" type="submit">Se déconnecter</button>
-        </form>
-    </section>
-     <section class="col-span-8 border border-neutral-100 rounded-lg p-8">
-         <h2 class="sr-only">Informations supplémentaires</h2>
-         <div class="pb-8">
-             <h3 class="text-2xl mb-4 font-medium">Les épreuves les plus récentes</h3>
-             <div class="grid grid-cols-3 gap-5">
-                 <x-admin.profile.epreuve-info
-                     title="Epreuve 27"
-                     date="11/09/2027"
-                     link="Récapitulatif"
-                     link_title="Aller vers le récapitulatif"
-                 />
-
-                 <x-admin.profile.epreuve-info
-                     title="Epreuve 27"
-                     date="11/09/2027"
-                     link="Récapitulatif"
-                     link_title="Aller vers le récapitulatif"
-                 />
-
-                 <x-admin.profile.epreuve-info
-                     title="Epreuve 27"
-                     date="11/09/2027"
-                     link="Récapitulatif"
-                     link_title="Aller vers le récapitulatif"
-                 />
-             </div>
-         </div>
-         <div>
-             <h3 class="text-2xl mb-4 font-medium">Les épreuves à venir</h3>
-             <div class="grid grid-cols-3 gap-5">
-                 <x-admin.profile.epreuve-info
-                     title="Epreuve 27"
-                     date="11/09/2027"
-                     link="Modifier l'épreuve"
-                     link_title="Aller vers le récapitulatif"
-                 />
-
-                 <x-admin.profile.epreuve-info
-                     title="Epreuve 27"
-                     date="11/09/2027"
-                     link="Récapitulatif"
-                     link_title="Aller vers le récapitulatif"
-                 />
-
-                 <x-admin.profile.epreuve-info
-                     title="Epreuve 27"
-                     date="11/09/2027"
-                     link="Récapitulatif"
-                     link_title="Aller vers le récapitulatif"
-                 />
-             </div>
-         </div>
-     </section>
- </div>
+                <div class="grid grid-cols-3 gap-5">
+                    <x-admin.profile.epreuve-info
+                        title="Epreuve 27"
+                        date="11/09/2027"
+                        link="Modifier l'épreuve"
+                        link_title="Modifier l'épreuve"
+                    />
+                    <x-admin.profile.epreuve-info
+                        title="Epreuve 27"
+                        date="11/09/2027"
+                        link="Récapitulatif"
+                        link_title="Aller vers le récapitulatif"
+                    />
+                    <x-admin.profile.epreuve-info
+                        title="Epreuve 27"
+                        date="11/09/2027"
+                        link="Récapitulatif"
+                        link_title="Aller vers le récapitulatif"
+                    />
+                </div>
+            </div>
+        </section>
+    </div>
 </x-layouts.admin>

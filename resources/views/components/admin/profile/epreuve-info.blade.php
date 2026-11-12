@@ -4,10 +4,25 @@
     'link',
     'link_title'
 ])
-<div class="border border-neutral-100 rounded-lg flex flex-col p-5">
-    <span class="text-xl">{{ $title }}</span>
-    <time class="text-gray-400">{{ $date }}</time>
-    <a href="" class="underline mt-2 hover:text-main-red" title="{{ $linkTitle }}">
+
+<div
+    class="group flex min-h-40 flex-col justify-between rounded-xl border border-neutral-200 bg-neutral-50 p-5 transition hover:-translate-y-1 hover:border-neutral-300 hover:bg-white hover:shadow-md"
+>
+    <div>
+        <span class="block text-lg font-semibold">
+            {{ $title }}
+        </span>
+
+        <time class="mt-1 block text-sm text-neutral-400">
+            {{ $date }}
+        </time>
+    </div>
+
+    <a
+        href=""
+        class="mt-6 text-sm font-medium underline underline-offset-4 transition hover:text-main-red"
+        title="{{ $link_title }}"
+    >
         {{ $link }}
     </a>
 </div>

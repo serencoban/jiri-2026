@@ -2,7 +2,13 @@
     'info',
     'info_details',
 ])
-<div class="mb-3 flex justify-between">
-    <span>{{$info}}:</span>
-    <span class="font-medium">{{$info_details}}</span>
+
+<div class="flex items-center justify-between border-b border-neutral-200 py-4 last:border-b-0">
+    <span class="text-sm text-neutral-500">
+        {{ $info }}
+    </span>
+
+    <span class="text-sm font-medium text-neutral-900">
+        {{ $info_details }}
+    </span>
 </div>
