@@ -11,6 +11,7 @@
     </label>
 
     <input
+        {{ $attributes }}
         type="{{ $type }}"
         name="{{ $name }}"
         id="{{ $name }}"
