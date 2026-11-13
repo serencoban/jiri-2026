@@ -1,7 +1,7 @@
 <x-layouts.auth title="S'enregistrer">
     <div class="bg-[url('/storage/app/public/auth-bg.png')] bg-cover bg-no-repeat col-span-7 flex items-center">
         <div class="text-white flex flex-col gap-4 items-start p-16">
-            <x-icons.double-pencil/>
+            <x-svg.double-pencil/>
             <h1 class="text-5xl font-medium">{{__('auth.title_register')}}</h1>
             <p>{{__('auth.desc_register')}}</p>
         </div>
