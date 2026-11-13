@@ -18,6 +18,11 @@ class Jiri extends Model
         return $this->belongsToMany(Contact::class, 'attendances');
     }
 
+    public function evaluated(): BelongsToMany
+    {
+        return $this->contacts()->wherePivot('role',Enu);
+    }
+
     //il nya pas que les contacts, les evalué et evaluateurs aussi sont diff ! + filtrer avec wherepivot ...
     public function projects(): BelongsToMany
     {

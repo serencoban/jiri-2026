@@ -12,7 +12,8 @@
             <h2 class="text-3xl font-medium">{{__('title.students_list')}}</h2>
             <div class="flex pb-4">
                 <x-generic.table.table-filter.search-input/>
-                <x-generic.btn.main title="Ajouter une épreuve"/>
+                <button type="button" @click="$dispatch('open-add-student')" class="btn-main">{{__('actions.add_student')}}</button>
+                <livewire:modals.epreuves.students.add-student/>
             </div>
         </div>
         <x-generic.epreuves.students.cards/>
@@ -22,7 +23,8 @@
             <h2 class="text-3xl font-medium">{{__('title.evaluators_list')}}</h2>
             <div class="flex pb-4">
                 <x-generic.table.table-filter.search-input/>
-                <x-generic.btn.main title="Ajouter un évaluateur"/>
+                <button type="button" @click="$dispatch('open-add-evaluator')" class="btn-main">{{__('actions.add_evaluator')}}</button>
+                <livewire:modals.epreuves.evaluators.add-evaluator/>
             </div>
         </div>
         <x-generic.epreuves.evaluators.cards/>

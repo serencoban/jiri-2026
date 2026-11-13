@@ -27,6 +27,6 @@
                 <span>12/20</span>
             </div>
         </div>
-        <a class="btn-main" href="#">Supprimer l'épreuve</a>
+        <a class="btn-main" href="#">Supprimer le projet</a>
     </div>
 </div>
