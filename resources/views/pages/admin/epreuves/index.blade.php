@@ -28,6 +28,5 @@
             {{ $jiris->links() }}
         </div>
     </div>
-
 </x-layouts.admin>
 

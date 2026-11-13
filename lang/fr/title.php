@@ -15,6 +15,6 @@ return [
     'profile_page'=>'Page de profile',
     'profile_details'=>'Détails sur Dominique Vilain',
     'profile_supp'=>'Informations supplémentaires',
-    'recent_jiri'=>'Les jiri les plus récentes',
-    'upcoming_jiri'=>'Les jiri à venir',
+    'recent_jiri'=>'Les Jiris les plus récentes',
+    'upcoming_jiri'=>'Les Jiris à venir',
 ];

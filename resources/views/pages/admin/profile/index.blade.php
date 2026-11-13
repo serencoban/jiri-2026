@@ -6,10 +6,7 @@
             <div>
                 <div class="flex justify-center mb-10">
                     <div class="relative">
-                        <div class="flex h-36 w-36 items-center justify-center rounded-full bg-red-50 text-4xl font-semibold text-main-red">
-                            {{ strtoupper(substr(auth()->user()->firstname, 0, 1)) }}
-                            {{ strtoupper(substr(auth()->user()->lastname, 0, 1)) }}
-                        </div>
+                        <div class="flex h-36 w-36 items-center justify-center rounded-full bg-red-50 text-4xl font-semibold text-main-red"></div>
                         <div class="absolute bottom-1 right-2 h-8 w-8 rounded-full border-4 border-white bg-red-200"></div>
                     </div>
                 </div>
@@ -24,7 +21,7 @@
                     />
                     <x-admin.profile.user-info
                         info="Compte créé le"
-                        info_details="11/07/2019"
+                        :info_details="auth()->user()->created_at->format('d/m/Y')"
                     />
                     <div class="flex items-center justify-between border-b border-neutral-200 py-4">
                         <span class="text-sm text-neutral-500">Langue</span>
@@ -45,7 +42,6 @@
             <div class="pb-8">
                 <div class="mb-6">
                     <h3 class="text-2xl font-semibold">{{ __('title.recent_jiri') }}</h3>
-                    <p class="mt-1 text-sm text-neutral-400">Vos dernières épreuves terminées</p>
                 </div>
                 <div class="grid grid-cols-3 gap-5">
                     <x-admin.profile.epreuve-info
@@ -71,7 +67,6 @@
             <div class="pt-10">
                 <div class="mb-6">
                     <h3 class="text-2xl font-semibold">{{ __('title.upcoming_jiri') }}</h3>
-                    <p class="mt-1 text-sm text-neutral-400">vos prochaines épreuves</p>
                 </div>
 
                 <div class="grid grid-cols-3 gap-5">
@@ -84,14 +79,14 @@
                     <x-admin.profile.epreuve-info
                         title="Epreuve 27"
                         date="11/09/2027"
-                        link="Récapitulatif"
-                        link_title="Aller vers le récapitulatif"
+                        link="Modifier l'épreuve"
+                        link_title="Modifier l'épreuve"
                     />
                     <x-admin.profile.epreuve-info
                         title="Epreuve 27"
                         date="11/09/2027"
-                        link="Récapitulatif"
-                        link_title="Aller vers le récapitulatif"
+                        link="Modifier l'épreuve"
+                        link_title="Modifier l'épreuve"
                     />
                 </div>
             </div>
