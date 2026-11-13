@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('assignments', function (Blueprint $table) {
-            $table->uuid('id')->primary();
             $table->foreignUuid('jiri_id')->constrained('jiris')->cascadeOnDelete();
             $table->foreignUuid('project_id')->constrained('projects')->cascadeOnDelete();
             $table->unsignedTinyInteger('weight');

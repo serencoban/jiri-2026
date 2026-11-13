@@ -15,7 +15,11 @@ class JiriController extends Controller
 
     public function show(Jiri $jiri)
     {
-        $jiri->load('projects.tasks');
+        $jiri->load([
+            'evaluated',
+            'evaluators',
+            'projects.tasks',
+        ]);
 
         return view('pages.admin.epreuves.show', compact('jiri'));
     }

@@ -16,7 +16,16 @@
                 <livewire:modals.epreuves.students.add-student/>
             </div>
         </div>
-        <x-generic.epreuves.students.cards/>
+        <div class="grid grid-cols-4 gap-8">
+            @foreach ($jiri->evaluated as $evaluated)
+                <x-admin.students.card
+                    image="cat2.jpg"
+                    :contact="$evaluated->firstname , $evaluated->lastname"
+                    evaluators_seen="7"
+                    contact_view="élèves"
+                />
+            @endforeach
+        </div>
     </section>
     <section class="pb-20">
         <div class="flex justify-between">
@@ -27,7 +36,16 @@
                 <livewire:modals.epreuves.evaluators.add-evaluator/>
             </div>
         </div>
-        <x-generic.epreuves.evaluators.cards/>
+        <div class="grid grid-cols-4 gap-8">
+        @foreach ($jiri->evaluators as $evaluator)
+            <x-admin.students.card
+                image="andrew.jpg"
+                :contact="$evaluator->firstname , $evaluator->lastname "
+                evaluators_seen="7"
+                contact_view="élèves"
+            />
+        @endforeach
+        </div>
     </section>
     <section class="pb-20">
         <div class="flex justify-between mb-2">
