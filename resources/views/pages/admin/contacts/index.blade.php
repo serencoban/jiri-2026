@@ -6,6 +6,7 @@
             <button type="button" @click="$dispatch('open-add-contact')" class="btn-main">{{__('actions.add_contact')}}</button>
         </div>
     </div>
+        <livewire:modals.contacts.add-contact/>
     <div>
         <div class="table w-full table-auto rounded-lg overflow-hidden">
             <div class="table-header-group font-semibold bg-light-white">

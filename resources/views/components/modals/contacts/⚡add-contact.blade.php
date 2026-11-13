@@ -38,8 +38,38 @@ new class extends Component {
     >
         <form action="" method="get">
             <h2 class="font-semibold text-2xl mb-8">{{__('actions.add_contact')}}</h2>
-            <x-generic.table.table-filter.search-input/>
-            <button type="submit" class="btn-main w-full mt-4" wire:click="submit">{{__('actions.create_contact')}}</button>
+            <div class="relative">
+                <img
+                    class="w-30 h-30 rounded-full mx-auto"
+                    src="{{asset('storage/cat1.jpg') }}"
+                    alt=""
+                >
+                <span class="absolute bg-main-red w-8 h-8 left-62 bottom-0.5 rounded-full "></span>
+            </div>
+                <form action="" method="POST">
+                    <div class="flex gap-2 mt-8 mb-4">
+                        <x-generic.form.input
+                            label="Nom"
+                            name="lastname"
+                            id="lastname"
+                            placeholder="ex: Doe"
+                        />
+                        <x-generic.form.input
+                            label="Prénom"
+                            name="firstname"
+                            id="firstname"
+                            placeholder="ex: Jane"
+                        />
+                    </div>
+                    <x-generic.form.input
+                        label="Email"
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="ex: jane@doe.com"
+                    />
+                    <button type="submit" class="btn-main w-full mt-4" wire:click="submit">{{__('actions.create_contact')}}</button>
+                </form>
         </form>
     </div>
 </div>
