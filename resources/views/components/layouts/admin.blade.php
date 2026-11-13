@@ -18,20 +18,20 @@
                 </a>
                 <ul class="space-y-2 font-medium">
                     <li>
-                        <a href="{{route('epreuves')}}" class="flex items-center px-2 py-3 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                        <a href="{{route('epreuves')}}" class="flex items-center px-2 py-3 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group  transition hover:text-main-red">
                             <x-svg.epreuve/>
                             <span class="ms-3">Épreuves</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('contacts')}}" class="flex items-center px-2 py-3 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+                        <a href="{{route('contacts')}}" class="flex items-center px-2 py-3 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group  transition hover:text-main-red">
                             <x-svg.contacts/>
                             <span class="ms-3">Contacts</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('projects')}}" class="flex items-center px-2 py-3 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
-                            <x-svg.projects/>
+                        <a href="{{route('projects')}}" class="flex items-center px-2 py-3 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group  transition hover:text-main-red">
+                            <x-svg.projects class=" transition hover:fill-main-red"/>
                             <span class="ms-3">Projets</span>
                         </a>
                     </li>
