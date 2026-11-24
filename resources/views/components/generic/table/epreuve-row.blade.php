@@ -1,5 +1,6 @@
 @props([
     'id',
+    'slug',
     'name',
     'date',
     'begins_at',
@@ -7,7 +8,7 @@
     'status' => 'upcoming',
 ])
 
-<div class="table-row border-b border-b-gray-200 hover:bg-gray-50 cursor-pointer" x-data @click="window.location.href='{{ route('epreuves.show', $id) }}'">
+<div class="table-row border-b border-b-gray-200 hover:bg-gray-50 cursor-pointer" x-data @click="window.location.href='{{ route('epreuves.show', $slug) }}'">
     <x-generic.table.cell>{{ $name }}</x-generic.table.cell>
     <x-generic.table.cell>{{ $date }}</x-generic.table.cell>
     <x-generic.table.cell>{{ \Carbon\Carbon::parse($begins_at)->format('H:i') }}</x-generic.table.cell>

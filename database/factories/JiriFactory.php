@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Jiri;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends Factory<Jiri>
@@ -27,6 +28,7 @@ class JiriFactory extends Factory
                 'ongoing',
                 'completed',
             ]),
+
         ];
     }
 }
