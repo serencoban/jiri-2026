@@ -19,6 +19,7 @@ return new class extends Migration
             $table->time('begins_at');
             $table->time('ends_at');
             $table->string('status');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

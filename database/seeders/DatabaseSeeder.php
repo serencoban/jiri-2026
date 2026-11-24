@@ -11,6 +11,7 @@ use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -39,6 +40,7 @@ class DatabaseSeeder extends Seeder
         foreach ($jiriMyriamNames as $name) {
             Jiri::factory()->create([
                 'name' => $name,
+                'slug'=> Str::slug($name),
                 'user_id' => $myriam->id,
             ]);
         }
@@ -58,6 +60,7 @@ class DatabaseSeeder extends Seeder
         foreach ($jiriDominiqueNames as $name) {
             Jiri::factory()->create([
                 'name' => $name,
+                'slug'=> Str::slug($name),
                 'user_id' => $dominique->id,
             ]);
         }

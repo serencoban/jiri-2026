@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-#[Fillable(['name','date','begins_at','ends_at','status', 'user_id'])]
+#[Fillable(['name','date','begins_at','ends_at','status', 'user_id', 'slug'])]
 #[Table(incrementing:false)]
 class Jiri extends Model
 {
@@ -36,6 +36,11 @@ class Jiri extends Model
     {
         return $this->belongsToMany(Project::class, 'assignments')
             ->withPivot('weight'); //sert a prendre la colonnes supp ds la table pivot
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 
 }

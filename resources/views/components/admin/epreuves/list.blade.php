@@ -6,6 +6,7 @@
     @foreach($jiris as $jiri)
         <x-generic.table.epreuve-row
             :id="$jiri->id"
+            :slug="$jiri->slug"
             :name="$jiri->name"
             :date="$jiri->date"
             :begins_at="$jiri->begins_at"
