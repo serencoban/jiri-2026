@@ -7,7 +7,6 @@ use Livewire\Component;
 new class extends Component
 {
     public bool $open = false;
-
     public string $firstname = '';
     public string $lastname = '';
     public string $email = '';

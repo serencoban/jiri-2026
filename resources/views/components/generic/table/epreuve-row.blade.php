@@ -22,9 +22,6 @@
             ]"
         />
     </x-generic.table.cell>
-    <x-generic.table.cell>
-        <button type="button" class="cursor-pointer" @click.stop>
-            <x-svg.actions/>
-        </button>
-    </x-generic.table.cell>
+    <x-generic.table.actions/>
+
 </div>
