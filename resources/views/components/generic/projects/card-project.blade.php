@@ -17,7 +17,7 @@
         @if($show_weighting)
             <span class="text-xl font-medium">{{ $weighting }}%</span>
         @endif
-        <button type="button" class="cursor-pointer">...</button>
+        <x-generic.btn.actions/>
     </div>
     <p class="text-text-light pb-4">{{ $projectDescription ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' }}</p>
     <a href="#" class="btn-sec">Aller vers le cahier de charge</a>

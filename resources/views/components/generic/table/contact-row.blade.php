@@ -28,9 +28,5 @@
         {{ $email }}
     </div>
 
-    <div class="table-cell px-6 py-4 text-center border-b border-b-gray-100 align-middle">
-        <button class="cursor-pointer">
-            <x-svg.actions/>
-        </button>
-    </div>
+    <x-generic.table.actions/>
 </div>
