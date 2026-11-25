@@ -11,7 +11,6 @@
         @foreach($projects as $project)
             <x-generic.projects.card-project
                 :project="$project"
-                :show-weighting="false"
             />
         @endforeach
     </div>

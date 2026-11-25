@@ -23,4 +23,10 @@ class JiriController extends Controller
 
         return view('pages.admin.epreuves.show', compact('jiri'));
     }
+
+    public function destroy(Jiri $jiri)
+    {
+        $jiri->delete();
+        return redirect('/')->with('success', 'Jiri deleted!');
+    }
 }

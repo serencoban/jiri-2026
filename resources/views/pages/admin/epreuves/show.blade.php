@@ -19,8 +19,9 @@
         <div class="grid grid-cols-4 gap-8">
             @foreach ($jiri->evaluated as $evaluated)
                 <x-admin.students.card
+                    :id="$evaluated->id"
                     image="cat2.jpg"
-                    :contact="$evaluated->firstname , $evaluated->lastname"
+                    :contact="$evaluated->firstname . ' ' . $evaluated->lastname"
                     evaluators_seen="7"
                     contact_view="élèves"
                 />
@@ -37,14 +38,15 @@
             </div>
         </div>
         <div class="grid grid-cols-4 gap-8">
-        @foreach ($jiri->evaluators as $evaluator)
-            <x-admin.students.card
-                image="andrew.jpg"
-                :contact="$evaluator->firstname , $evaluator->lastname "
-                evaluators_seen="7"
-                contact_view="élèves"
-            />
-        @endforeach
+            @foreach ($jiri->evaluators as $evaluator)
+                <x-admin.students.card
+                    :id="$evaluator->id"
+                    image="andrew.jpg"
+                    :contact="$evaluator->firstname . ' ' . $evaluator->lastname"
+                    evaluators_seen="7"
+                    contact_view="évaluateurs"
+                />
+            @endforeach
         </div>
     </section>
     <section class="pb-20">
@@ -61,9 +63,12 @@
             </div>
         </div>
         <div class="grid grid-cols-3 gap-8">
-            <x-generic.projects.card-project title="Portfolio" :show_weighting="true" weighting="33" />
-            <x-generic.projects.card-project title="Site reproduction" :show_weighting="true" weighting="33" />
-            <x-generic.projects.card-project title="Le Vieux Moulin" :show_weighting="true" weighting="33" />
+            @foreach ($jiri->projects as $project)
+                <x-generic.projects.card-project
+                    :project="$project"
+                    :weighting="$project->pivot->weight"
+                />
+            @endforeach
         </div>
     </section>
 </x-layouts.admin>

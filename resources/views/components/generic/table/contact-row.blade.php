@@ -1,4 +1,5 @@
 @props([
+    'id',
     'firstname',
     'lastname',
     'email',
@@ -28,5 +29,8 @@
         {{ $email }}
     </div>
 
-    <x-generic.table.actions/>
+    <livewire:generic.btn.actions
+        type="contact"
+        :id="$id"
+    />
 </div>
