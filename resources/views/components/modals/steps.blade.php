@@ -16,14 +16,16 @@
     @foreach($steps as $step => $label)
         <li class="flex flex-1 items-start">
             <div class="flex flex-col items-center">
-                <div @class([
+                <a href="#">
+                    <div @class([
                         'w-4 h-4 rounded-full flex items-center justify-center border-2',
                         'bg-main-red border-main-red text-white' => $step < $currentStep,
                         'bg-white border-main-red text-main-red' => $step === $currentStep,
                         'bg-white border-neutral-400 text-neutral-400' => $step > $currentStep,
                     ])
-                >
-                </div>
+                    >
+                    </div>
+                </a>
                 <span
                     @class([
                         'mt-2 text-sm',

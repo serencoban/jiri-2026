@@ -1,4 +1,4 @@
-<form action="#">
+<form action="#" meth>
     <div class="mr-2">
         <label for="search" class="block mb-2.5 text-sm font-medium text-heading sr-only ">{{__('actions.search')}}</label>
         <div class="relative">
