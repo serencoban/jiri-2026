@@ -46,14 +46,12 @@ new class extends Component
                 name="name"
                 type="text"
                 placeholder="ex : Design Web - Juin 2021"
-                class="mb-4"
             />
             <x-generic.form.input
                 label="Date du jiri"
                 name="date"
                 type="date"
                 placeholder="ex : Design Web - Juin 2021"
-                class="mb-4"
             />
             <div class="flex gap-2 mb-4">
                 <x-generic.form.input

@@ -65,6 +65,13 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        $andrew = User::factory()->create([
+            'firstname' => 'Andrew',
+            'lastname' => 'Garfields',
+            'email' => 'a@g.com',
+        ]);
+
+
         $contacts = Contact::factory(20)->create();
 
         $myriamsJiri = $myriam->jiris()->first();

@@ -10,8 +10,6 @@ new class extends Component
     public string $name = '';
     public string $description = '';
     public string $tasks = '';
-    public string $project_url = '';
-    public string $repo_url = '';
     public string $brief_url = '';
 
     public function close()
@@ -31,11 +29,8 @@ new class extends Component
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'tasks' => 'required|string|max:255',
-            'project_url' => 'required|string|max:255',
-            'repo_url' => 'required|string|max:255',
-            'brief_url' => 'required|string|max:255',
+            'brief_url' => 'required|url|max:255',
         ]);
-        // A changer les string en url
 
        Project::create($validated);
 
@@ -43,8 +38,6 @@ new class extends Component
             'name',
             'description',
             'tasks',
-            'project_url',
-            'repo_url',
             'brief_url',
         ]);
         $this->open = false;
@@ -90,22 +83,6 @@ new class extends Component
                     wire:model="tasks"
                 />
                 <div>
-                    <x-generic.form.input
-                        label="Lien du projet"
-                        name="project_url"
-
-                        id="project_url"
-                        placeholder="ex: Examen d'anglais 2025"
-                        wire:model="project_url"
-                    />
-                    <x-generic.form.input
-                        label="Lien du repo"
-
-                        name="repo_url"
-                        id="repo_url"
-                        placeholder="ex: Examen d'anglais 2025"
-                        wire:model="repo_url"
-                    />
                     <x-generic.form.input
                         label="Lien du cahier de charge"
 
