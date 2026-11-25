@@ -23,6 +23,9 @@
             ]"
         />
     </x-generic.table.cell>
-    <x-generic.table.actions/>
+    <livewire:generic.btn.actions
+        type="jiri"
+        :id="$id"
+    />
 
 </div>

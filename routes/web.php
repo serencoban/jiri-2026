@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
 
     Route::get('/', [JiriController::class, 'index'])->name('epreuves');
+    Route::delete('/epreuves/{jiri}', [JiriController::class, 'destroy']);
 
     Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
 
