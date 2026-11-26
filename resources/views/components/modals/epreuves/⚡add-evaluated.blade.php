@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\Contact;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
-new class extends Component
-{
+new class extends Component {
     public bool $open = false;
 
     public function close()
@@ -18,8 +19,9 @@ new class extends Component
         $this->open = true;
     }
 
-    public function nextModal(){
-        $this->open= false;
+    public function nextModal()
+    {
+        $this->open = false;
         $this->dispatch('open-add-projects');
     }
 };
@@ -38,7 +40,7 @@ new class extends Component
          class="modal"
     >
         <form action="" method="get">
-            <x-modals.steps :current-step="3" />
+            <x-modals.steps :current-step="3"/>
             <h2 class="font-semibold text-2xl mb-8">{{__('actions.add_students')}}</h2>
             <x-generic.table.table-filter.search-input/>
             <button type="button" class="btn-main w-full mt-4" wire:click="nextModal">{{__('actions.next')}}</button>
