@@ -10,10 +10,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/', [JiriController::class, 'index'])->name('epreuves');
-    Route::delete('/epreuves/{jiri}', [JiriController::class, 'destroy']);
+    Route::livewire('/', 'pages::admin.epreuves.index')->name('epreuves');
 
-    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
+    Route::livewire('/contacts', 'pages::admin.contacts.index')->name('contacts');
 
     Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
 

@@ -13,6 +13,8 @@
             <livewire:generic.btn.actions
                 type="project"
                 :id="$project->id"
+                :with-border="false"
+                :with-padding="false"
             />
         </div>
     </div>
