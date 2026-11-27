@@ -43,47 +43,36 @@ new class extends Component
 };
 ?>
 
-<div>
-    <div
-        x-show="$wire.open"
-        class="fixed inset-0 z-40 bg-black/40"
-    ></div>
+<x-modals.base open="$wire.open">
+    <form wire:submit="submit">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-semibold">{{ __('actions.add_contact') }}</h2>
+            <button type="button" wire:click="close" class="flex h-9 w-9 items-center justify-center rounded-lg text-text-light transition hover:bg-neutral-100 hover:text-neutral-900">✕</button>
+        </div>
 
-    <div
-        x-show="$wire.open"
-        x-transition:enter="transition ease-out duration-200"
-        x-transition:enter-start="opacity-0 scale-95"
-        x-transition:enter-end="opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-150"
-        x-transition:leave-start="opacity-100 scale-100"
-        x-transition:leave-end="opacity-0 scale-95"
-        @click.outside="$wire.close()"
-        @keyup.escape.window="$wire.close()"
-        class="modal"
-    >
-        <form wire:submit="submit">
-            <h2 class="font-semibold text-2xl mb-8">{{ __('actions.add_contact') }}</h2>
-            <div class="relative">
-                <img class="w-30 h-30 rounded-full mx-auto" src="{{ asset('storage/cat1.jpg') }}" alt="">
-                <span class="absolute bg-main-red w-8 h-8 left-62 bottom-0.5 rounded-full"></span>
-            </div>
+        <div class="relative mx-auto w-fit">
+            <img class="h-24 w-24 rounded-full object-cover sm:h-28 sm:w-28" src="{{ asset('storage/cat1.jpg') }}" alt="">
+            <span class="absolute bottom-0 right-1 h-7 w-7 rounded-full bg-main-red"></span>
+        </div>
 
-            <div class="flex gap-2 mt-8 mb-4">
-                <x-generic.form.input
-                    label="Nom"
-                    name="lastname"
-                    id="lastname"
-                    placeholder="ex: Doe"
-                    wire:model="lastname"
-                />
-                <x-generic.form.input
-                    label="Prénom"
-                    name="firstname"
-                    id="firstname"
-                    placeholder="ex: Jane"
-                    wire:model="firstname"
-                />
-            </div>
+        <div class="grid grid-cols-1 gap-4 mt-8 sm:grid-cols-2">
+            <x-generic.form.input
+                label="Nom"
+                name="lastname"
+                id="lastname"
+                placeholder="ex: Doe"
+                wire:model="lastname"
+            />
+            <x-generic.form.input
+                label="Prénom"
+                name="firstname"
+                id="firstname"
+                placeholder="ex: Jane"
+                wire:model="firstname"
+            />
+        </div>
+
+        <div class="mt-4">
             <x-generic.form.input
                 label="Email"
                 type="email"
@@ -92,7 +81,8 @@ new class extends Component
                 placeholder="ex: jane@doe.com"
                 wire:model="email"
             />
-            <button type="submit" class="btn-main w-full mt-4">{{ __('actions.create_contact') }}</button>
-        </form>
-    </div>
-</div>
+        </div>
+
+        <button type="submit" class="btn-main mt-6 w-full">{{ __('actions.create_contact') }}</button>
+    </form>
+</x-modals.base>

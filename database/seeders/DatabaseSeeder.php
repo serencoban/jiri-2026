@@ -2,14 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\EnumsAttendanceRole;
+use App\Enums\EnumsAttendanceRole;
 use App\Models\Contact;
 use App\Models\Invitation;
 use App\Models\Jiri;
 use App\Models\Project;
-use App\Models\Task;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 

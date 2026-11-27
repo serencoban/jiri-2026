@@ -23,7 +23,9 @@
     .drawer{
         @apply fixed top-0 right-0 bottom-0 w-[40vw] p-4 bg-neutral-100 shadow overflow-scroll
     }
-
+    [x-cloak] {
+        display: none !important;
+    }
     .modal {
         @apply fixed top-1/2 left-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-8 shadow-lg;
     }

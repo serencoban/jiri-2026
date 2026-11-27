@@ -52,5 +52,4 @@
         </li>
     @endforeach
 </ol>
-    <button @click="$wire.close()" class="block w-full cursor-pointer text-right">✕</button>
 </div>
