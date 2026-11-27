@@ -1,56 +1,91 @@
 <?php
 
+use App\Enums\EnumsAttendanceRole;
+use App\Models\Contact;
+use App\Models\Jiri;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 new class extends Component {
-    public bool $open = false;
 
-    public function close()
+    public bool $open = false;
+    public string $jiriId;
+    public string $search = '';
+    public array $selectedContacts = [];
+
+    #[On('open-add-evaluator')]
+    public function open(): void
+    {
+        $this->reset('search', 'selectedContacts');
+        $this->open = true;
+    }
+
+    public function close(): void
     {
         $this->open = false;
     }
 
-    #[On('open-add-evaluator')]
-    public function open()
+    #[Computed]
+    public function contacts()
     {
-        $this->open = true;
+        return Contact::query()
+            ->when($this->search, function ($query) {
+                $query->where(function ($query) {
+                    $query
+                        ->where('firstname', 'like', '%' . $this->search . '%')
+                        ->orWhere('lastname', 'like', '%' . $this->search . '%')
+                        ->orWhere('email', 'like', '%' . $this->search . '%');
+                });
+            })
+            ->limit(10)
+            ->get();
     }
 
-    public function submit(){
-        $this->open= false;
+    public function submit(): void
+    {
+        if (empty($this->selectedContacts)) {
+            return;
+        }
+        $jiri = Jiri::findOrFail($this->jiriId);
+        $contacts = [];
+
+        foreach ($this->selectedContacts as $contactId) {
+            $contacts[$contactId] = [
+                'role' => EnumsAttendanceRole::Evaluator->value,
+            ];
+        }
+
+        $jiri->contacts()->syncWithoutDetaching($contacts);
+        $this->reset('search', 'selectedContacts');
+        $this->open = false;
+        $this->dispatch('contact-added');
     }
 };
+
 ?>
 
-<div>
-    <div x-show="$wire.open" class="fixed inset-0 z-40 bg-black/40"></div>
-    <div x-show="$wire.open"
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 scale-95"
-         x-transition:enter-end="opacity-100 scale-100"
-         x-transition:leave="transition ease-in duration-150"
-         x-transition:leave-start="opacity-100 scale-100"
-         x-transition:leave-end="opacity-0 scale-95"
-         @click.outside="$wire.close()"
-         @keyup.escape.window="$wire.close()"
-         class="modal"
-    >
-        <form action="" method="get">
-            <h2 class="font-semibold text-2xl mb-8">{{__('actions.add_contact')}}</h2>
-            <div class="relative">
-                <img
-                    class="w-30 h-30 rounded-full mx-auto"
-                    src="{{asset('storage/cat1.jpg') }}"
-                    alt=""
-                >
-                <span class="absolute bg-main-red w-8 h-8 left-62 bottom-0.5 rounded-full "></span>
-            </div>
-            <form action="" method="POST">
-                <x-generic.table.table-filter.search-input/>
-                <button type="submit" class="btn-main w-full mt-4" wire:click="submit">{{__('actions.create_contact')}}</button>
-            </form>
-        </form>
+<x-modals.base open="$wire.open">
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-semibold">Ajouter des évaluateurs</h2>
+        <button type="button" wire:click="close" class="flex h-9 w-9 items-center justify-center rounded-lg text-text-light transition hover:bg-neutral-100 hover:text-neutral-900">✕</button>
     </div>
-</div>
+    <x-generic.table.table-filter.search-input wire:model.live.debounce.300ms="search" />
 
+    <div class="mt-4 max-h-[50vh] space-y-2 overflow-y-auto">
+        @forelse ($this->contacts as $contact)
+            <label class="flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-200 p-3 transition hover:bg-light-white">
+                <input type="checkbox" wire:model.live="selectedContacts" value="{{ $contact->id }}">
+                <img src="{{ asset('storage/' . $contact->image) }}" alt="Photo de {{ $contact->firstname }} {{ $contact->lastname }}" class="h-10 w-10 rounded-full object-cover">
+                <div class="min-w-0">
+                    <span class="block font-medium">{{ $contact->firstname }} {{ $contact->lastname }}</span>
+                    <span class="block truncate text-sm text-text-light">{{ $contact->email }}</span>
+                </div>
+            </label>
+        @empty
+            <p class="py-6 text-center text-sm text-text-light">Aucun contact trouvé.</p>
+        @endforelse
+    </div>
+
+    <button type="button" wire:click="submit" class="btn-main mt-6 w-full" @disabled(empty($selectedContacts))>Ajouter les évaluateurs</button>
+</x-modals.base>

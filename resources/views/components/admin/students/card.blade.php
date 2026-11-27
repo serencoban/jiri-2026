@@ -2,32 +2,23 @@
     'id',
     'image',
     'contact',
-    'evaluators_seen' => 0,
-    'contact_view' => 'élèves',
+    'seen_count' => 0,
+    'seen_type' => 'évaluateurs',
 ])
 
-<div class="relative">
-
-    <a href="{{ route('students.index') }}" class="block">
-        <div class="flex flex-col items-center border border-grey rounded-lg p-4 cursor-pointer hover:bg-light-white">
-            <img class="mb-2 w-16 h-16 rounded-full" src="{{ asset('storage/' . $image) }}" alt="">
-            <span class="text-xl font-medium">{{ $contact }}</span>
-            <span>
-                @if ($contact_view === 'élèves')
-                    {{ $evaluators_seen }}/10 élèves
-                @else
-                    {{ $evaluators_seen }}/10 évaluateurs
-                @endif
-            </span>
+<div class="relative h-full">
+    <a href="{{ route('students.index') }}" class="block h-full">
+        <div class="flex h-full flex-col items-center justify-center rounded-2xl border border-neutral-200 bg-white p-5 text-center transition hover:border-neutral-300 hover:bg-light-white">
+            <img class="mb-3 h-16 w-16 rounded-full object-cover" src="{{ asset('storage/' . $image) }}" alt="Photo de {{ $contact }}">
+            <span class="max-w-full truncate text-lg font-semibold">{{ $contact }}</span>
+            <span class="mt-1 text-sm text-text-light">{{ $seen_count }}/10 {{ $seen_type }}</span>
         </div>
     </a>
 
-    <div class="absolute top-3 right-4">
+    <div class="absolute top-3 right-3" @click.stop>
         <livewire:generic.btn.actions
             type="contact"
             :id="$id"
-            :with-border="false"
-            :with-padding="false"
         />
     </div>
 </div>

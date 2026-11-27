@@ -1,26 +1,17 @@
-<div class="mr-2">
-
-    <label
-        for="search"
-        class="block mb-2.5 text-sm font-medium text-heading sr-only"
-    >
-        {{ __('actions.search') }}
-    </label>
+<div class="w-full">
+    <label for="search" class="sr-only">{{ __('actions.search') }}</label>
 
     <div class="relative">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none opacity-40">
+            <x-svg.search />
+        </div>
 
         <input
             {{ $attributes }}
             type="search"
             id="search"
-            class="block w-full p-3 ps-4 rounded-lg border border-neutral-300 bg-neutral-100 text-heading text-sm focus:ring-main-red"
-            placeholder="Rechercher..."
+            class="block w-full py-3 pl-12 pr-4 text-sm bg-white border border-neutral-200 rounded-xl outline-none transition placeholder:text-neutral-400 focus:border-main-red focus:ring-2 focus:ring-main-red/10"
+            placeholder="Rechercher une épreuve..."
         />
-
-        <div class="absolute bottom-1.5 right-1.5 px-3 py-2 opacity-50">
-            <x-svg.search />
-        </div>
-
     </div>
-
 </div>

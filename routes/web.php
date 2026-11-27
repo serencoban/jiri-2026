@@ -1,11 +1,8 @@
 <?php
 
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EvaluatorController;
 use App\Http\Controllers\InvitationController;
 use App\Http\Controllers\JiriController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
@@ -14,7 +11,11 @@ Route::middleware('auth')->group(function () {
 
     Route::livewire('/contacts', 'pages::admin.contacts.index')->name('contacts');
 
-    Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+    Route::livewire('/projects', 'pages::admin.projets.index')->name('projects');
+
+    Route::livewire('/profile', 'pages::admin.profile.index')->name('profile');
+
+    Route::livewire('/epreuves/{jiri}', 'pages::admin.epreuves.show')->name('epreuves.show');
 
     Route::get('/epreuves/students/index', function () {
         return view('pages.admin.epreuves.students.index');
@@ -23,10 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/epreuves/students/show', function () {
         return view('pages.admin.epreuves.students.show');
     })->name('students.show');
-
-    Route::get('/epreuves/{jiri}', [JiriController::class, 'show'])->name('epreuves.show');
-
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
     Route::get('/evaluators', [EvaluatorController::class, 'index'])->name('evaluators');
 

@@ -9,8 +9,6 @@ new class extends Component {
 
     public string $type;
     public string $id;
-    public bool $withBorder = true;
-    public bool $withPadding = true;
 
     private const MAP = [ // Tableau qui fait le lien entre une clé et la classe Eloquent correspondante.
         'jiri' => Jiri::class,
@@ -30,26 +28,16 @@ new class extends Component {
 ?>
 
 <div
-    @class([
-        'table-cell text-center align-middle relative',
-        'px-6 py-4' => $withPadding,
-        'border-b border-b-gray-100' => $withBorder,
-    ])
+    class="relative inline-block text-center"
     x-data="{ open: false }"
     @mouseenter="open = true"
     @mouseleave="open = false"
 >
-    <button type="button" class="cursor-pointer" @click.stop>
+    <button type="button" class="inline-flex items-center justify-center cursor-pointer" @click.stop>
         <x-svg.actions />
     </button>
 
-    <div
-        x-cloak
-        x-show="open"
-        x-transition
-        class="absolute right-0 top-full mt-1 z-100 min-w-36 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg"
-        @click.stop
-    >
+    <div x-cloak x-show="open" x-transition class="absolute right-0 top-full mt-1 z-50 min-w-36 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-lg" @click.stop>
         <a href="#" class="block w-full px-4 py-3 text-left text-sm hover:bg-neutral-50">Modifier</a>
         <button type="button" wire:click="delete" class="block w-full px-4 py-3 text-left text-sm hover:bg-neutral-50">Supprimer</button>
     </div>
