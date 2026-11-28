@@ -9,93 +9,127 @@ new class extends Component
     public bool $open = false;
     public string $name = '';
     public string $description = '';
-    public string $tasks = '';
     public string $brief_url = '';
-
-    public function close()
-    {
-        $this->open = false;
-    }
+    public array $tasks = [''];
 
     #[On('open-add-project')]
-    public function open()
+    public function open(): void
     {
         $this->open = true;
     }
 
-    public function submit()
+    public function close(): void
+    {
+        $this->open = false;
+    }
+
+    public function addTask(): void
+    {
+        $this->tasks[] = '';
+    }
+
+    public function removeTask(int $index): void
+    {
+        unset($this->tasks[$index]);
+        $this->tasks = array_values($this->tasks);
+    }
+
+    public function submit(): void
     {
         $validated = $this->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'tasks' => 'required|string|max:255',
-            'brief_url' => 'required|url|max:255',
+            'name' => ['required', 'string', 'max:255'],
+            'description' => ['required', 'string'],
+            'brief_url' => ['required', 'url', 'max:255'],
+            'tasks' => ['required', 'array', 'min:1'],
+            'tasks.*' => ['required', 'string', 'max:255'],
         ]);
 
-       Project::create($validated);
+        $project = Project::create([
+            'name' => $validated['name'],
+            'description' => $validated['description'],
+            'brief_url' => $validated['brief_url'],
+        ]);
+
+        foreach ($validated['tasks'] as $task) {
+            $project->tasks()->create([
+                'label'=> $task,
+            ]);
+        }
 
         $this->reset([
             'name',
             'description',
-            'tasks',
             'brief_url',
         ]);
-        $this->open = false;
 
+        $this->tasks = [''];
+        $this->open = false;
+        $this->dispatch('project-created');
     }
 };
+
 ?>
 
-<div>
-    <div x-show="$wire.open" class="fixed inset-0 z-40 bg-black/40"></div>
-    <div x-show="$wire.open"
-         x-transition:enter="transition ease-out duration-200"
-         x-transition:enter-start="opacity-0 scale-95"
-         x-transition:enter-end="opacity-100 scale-100"
-         x-transition:leave="transition ease-in duration-150"
-         x-transition:leave-start="opacity-100 scale-100"
-         x-transition:leave-end="opacity-0 scale-95"
-         @click.outside="$wire.close()"
-         @keyup.escape.window="$wire.close()"
-         class="modal"
-    >
-        <form action="" method="post"  wire:submit="submit">
-            <h2 class="font-semibold text-2xl mb-8">{{__('actions.add_project')}}</h2>
-            <form action="" method="POST">
-                <x-generic.form.input
-                    label="Nom du projet"
-                    name="name"
-                    id="name"
-                    placeholder="ex: Examen d'anglais 2025"
-                    wire:model="name"
-                />
-                <div class="my-4">
-                    <label class="block mb-1 font-medium" for="description">Description du projet</label>
-                    <textarea wire:model="description" class="w-full border border-neutral-200 rounded-md py-2 px-3"
-                              name="description" id="description" cols="5" rows="5"
-                              placeholder="Voici une jolie description..."></textarea>
-                </div>
-                <x-generic.form.input
-                    label="Ajouter les tâches du projet"
-                    name="tasks"
-                    id="tasks"
-                    placeholder="ex: faire ceci"
-                    wire:model="tasks"
-                />
-                <div>
-                    <x-generic.form.input
-                        label="Lien du cahier de charge"
+<x-modals.base open="$wire.open">
+    <form wire:submit="submit">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-semibold">{{ __('actions.add_project') }}</h2>
+            <button type="button" wire:click="close" class="flex h-9 w-9 items-center justify-center rounded-lg text-text-light transition hover:bg-neutral-100 hover:text-neutral-900">✕</button>
+        </div>
 
-                        name="brief_url"
-                        id="brief_url"
-                        placeholder="ex: Examen d'anglais 2025"
-                        wire:model="brief_url"
-                    />
+        <div class="space-y-5">
+            <x-generic.form.input
+                label="Nom du projet"
+                name="name"
+                id="name"
+                placeholder="ex : Portfolio 2027"
+                wire:model="name"
+            />
+
+            <div>
+                <label for="description" class="mb-2 block text-sm font-medium">Description du projet</label>
+                <div class="rounded-xl border border-neutral-200 overflow-hidden">
+                    <div class="flex flex-wrap gap-2 border-b border-neutral-200 bg-light-white p-2">
+                        <button type="button" class="rounded-lg px-3 py-1.5 text-sm font-semibold hover:bg-white">B</button>
+                        <button type="button" class="rounded-lg px-3 py-1.5 text-sm italic hover:bg-white">I</button>
+                        <button type="button" class="rounded-lg px-3 py-1.5 text-sm underline hover:bg-white">U</button>
+                    </div>
+                    <textarea wire:model="description" id="description" rows="6" class="w-full resize-none border-0 p-4 outline-none focus:ring-0" placeholder="Décrivez le projet..."></textarea>
                 </div>
-                <button type="submit" class="btn-main w-full mt-4"
-                        wire:click="submit">{{__('actions.create_project')}}</button>
-            </form>
-        </form>
-    </div>
-</div>
+                @error('description')
+                <p class="mt-1 text-sm text-main-red">
+                    {{ $message }}
+                </p>
+                @enderror
+            </div>
+
+            <x-generic.form.input
+                label="Lien du cahier des charges"
+                type="url"
+                name="brief_url"
+                id="brief_url"
+                placeholder="https://..."
+                wire:model="brief_url"
+            />
+
+            <div>
+                <div class="mb-3 flex items-center justify-between">
+                    <label class="text-sm font-medium">Tâches du projet</label>
+                    <button type="button" wire:click="addTask" class="text-sm font-medium text-main-red">+ Ajouter une tâche</button>
+                </div>
+                <div class="space-y-3">
+                    @foreach ($tasks as $index => $task)
+                        <div class="flex items-center gap-2">
+                            <input type="text" wire:model="tasks.{{ $index }}" class="flex-1 rounded-xl border border-neutral-200 px-4 py-3 outline-none transition focus:border-main-red focus:ring-2 focus:ring-main-red/10" placeholder="ex : Réaliser la maquette">
+                            @if(count($tasks) > 1)
+                                <button type="button" wire:click="removeTask({{ $index }})" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-main-red transition hover:bg-red-50">✕</button>
+                            @endif
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn-main mt-6 w-full">{{ __('actions.create_project') }}</button>
+    </form>
+</x-modals.base>
 
